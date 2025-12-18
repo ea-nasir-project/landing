@@ -1,18 +1,14 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-const { title } = Astro.props;
+import Footer from "@components/Footer.astro";
 ---
 
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
   <head>
-    <BaseHead title={title} />
+    <slot name="head" />
   </head>
   <body>
-    <nav>
-      <a href="/">Home</a>
-    </nav>
-    <main>
-      <slot />
-    </main>
+    <slot />
+    <Footer />
   </body>
 </html>

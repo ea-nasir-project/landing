@@ -1,0 +1,19 @@
+---
+import BaseHead from "./BaseHead.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: ImageMetadata;
+}
+
+const { title, description, image } = Astro.props;
+---
+
+<BaseHead
+  title={title}
+  description={description}
+  image={image}
+  ogType="website"
+  showRSS={false}
+/>

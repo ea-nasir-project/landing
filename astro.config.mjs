@@ -22,6 +22,7 @@ export default defineConfig({
         '@pages': path.resolve('./src/pages'),
         '@scripts': path.resolve('./src/assets/scripts'),
         '@styles': path.resolve('./src/assets/styles'),
+        '@images': path.resolve('./src/assets/images'),
       },
     },
   },
