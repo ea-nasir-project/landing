@@ -1,5 +1,12 @@
 ---
+import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
+
+interface Props {
+  headerPosition?: "absolute" | "sticky";
+}
+
+const { headerPosition = "sticky" } = Astro.props;
 ---
 
 <!doctype html>
@@ -8,6 +15,7 @@ import Footer from "@components/Footer.astro";
     <slot name="head" />
   </head>
   <body>
+    <Header position={headerPosition} />
     <slot />
     <Footer />
   </body>

@@ -1,13 +1,18 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import HeadWebsite from "@components/HeadWebSite.astro";
+import Hero from "@components/Hero.astro";
 ---
 
-<BaseLayout>
+<BaseLayout headerPosition="absolute">
   <HeadWebsite
     slot="head"
     title="e-Renova | Logística reversa e reciclagem de eletrônicos"
     description="Plataforma de logística reversa para descarte correto de eletrônicos, conectando consumidores, empresas e pontos de coleta."
   />
+  <div class="bg-white">
+    <Hero />
+  </div>
   <h1>Transforme seu lixo eletrônico em impacto positivo</h1>
+  
 </BaseLayout>
