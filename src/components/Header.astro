@@ -43,11 +43,104 @@ const { position = "sticky" } = Astro.props;
         </svg>
       </button>
     </div>
-    <div class="hidden lg:flex lg:gap-x-12">
+    <div class="hidden lg:flex lg:gap-x-12 lg:items-center">
       <a href="/sobre" class="text-sm/6 font-semibold text-gray-900">Sobre</a>
-      <a href="/servicos" class="text-sm/6 font-semibold text-gray-900"
-        >Serviços</a
-      >
+
+      <!-- Dropdown Serviços -->
+      <div class="relative group">
+        <button
+          class="inline-flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900"
+        >
+          <span>Serviços</span>
+          <svg
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            data-slot="icon"
+            aria-hidden="true"
+            class="-mr-1 size-4"
+          >
+            <path
+              d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+              clip-rule="evenodd"
+              fill-rule="evenodd"></path>
+          </svg>
+        </button>
+        <div
+          class="absolute -left-26 top-full z-10 mt-3 w-max opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+        >
+          <div
+            class="w-full overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
+          >
+            <div class="p-4">
+              <div
+                class="group/item relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50"
+              >
+                <div class="flex-auto">
+                  <a
+                    href="/descarte-voluntario"
+                    class="block font-semibold text-gray-900"
+                  >
+                    Descarte Voluntário
+                    <span class="absolute inset-0"></span>
+                  </a>
+                  <p class="mt-1 text-gray-600">
+                    Pontos de coleta para descarte responsável
+                  </p>
+                </div>
+              </div>
+              <div
+                class="group/item relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50"
+              >
+                <div class="flex-auto">
+                  <a
+                    href="/compostagem-residencial"
+                    class="block font-semibold text-gray-900"
+                  >
+                    Compostagem Residencial
+                    <span class="absolute inset-0"></span>
+                  </a>
+                  <p class="mt-1 text-gray-600">
+                    Soluções para compostagem em casa
+                  </p>
+                </div>
+              </div>
+              <div
+                class="group/item relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50"
+              >
+                <div class="flex-auto">
+                  <a
+                    href="/lojistas-e-parceiros"
+                    class="block font-semibold text-gray-900"
+                  >
+                    Lojistas e Parceiros
+                    <span class="absolute inset-0"></span>
+                  </a>
+                  <p class="mt-1 text-gray-600">
+                    Parcerias para coleta em estabelecimentos
+                  </p>
+                </div>
+              </div>
+              <div
+                class="group/item relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50"
+              >
+                <div class="flex-auto">
+                  <a
+                    href="/empresas-e-industrias"
+                    class="block font-semibold text-gray-900"
+                  >
+                    Empresas e Indústrias
+                    <span class="absolute inset-0"></span>
+                  </a>
+                  <p class="mt-1 text-gray-600">
+                    Logística reversa para grandes volumes
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <a href="/blog" class="text-sm/6 font-semibold text-gray-900">Blog</a>
       <a
         href="https://wa.me/5511953562620?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20e-renova."
@@ -98,29 +191,51 @@ const { position = "sticky" } = Astro.props;
             <div class="-my-6 divide-y divide-gray-500/10">
               <div class="space-y-2 py-6">
                 <a
-                  href="#"
+                  href="/sobre"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                   >Sobre</a
                 >
+
+                <!-- Serviços com submenu -->
+                <div class="-mx-3">
+                  <div
+                    class="block px-3 py-2 text-base/7 font-semibold text-gray-900"
+                  >
+                    Serviços
+                  </div>
+                  <div class="pl-6 space-y-2">
+                    <a
+                      href="/descarte-voluntario"
+                      class="-mx-3 block rounded-lg px-3 py-2 text-sm/6 text-gray-600 hover:bg-gray-50"
+                      >Descarte Voluntário</a
+                    >
+                    <a
+                      href="/compostagem-residencial"
+                      class="-mx-3 block rounded-lg px-3 py-2 text-sm/6 text-gray-600 hover:bg-gray-50"
+                      >Compostagem Residencial</a
+                    >
+                    <a
+                      href="/lojistas-e-parceiros"
+                      class="-mx-3 block rounded-lg px-3 py-2 text-sm/6 text-gray-600 hover:bg-gray-50"
+                      >Lojistas e Parceiros</a
+                    >
+                    <a
+                      href="/empresas-e-industrias"
+                      class="-mx-3 block rounded-lg px-3 py-2 text-sm/6 text-gray-600 hover:bg-gray-50"
+                      >Empresas e Indústrias</a
+                    >
+                  </div>
+                </div>
+
                 <a
-                  href="#"
-                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                  >Serviços</a
-                >
-                <a
-                  href="#"
+                  href="/blog"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                   >Blog</a
                 >
-                <!-- <a
-                  href="#"
-                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                  >Contato</a
-                > -->
               </div>
               <div class="py-6">
                 <a
-                  href="#"
+                  href="https://wa.me/5511953562620?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20e-renova."
                   class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                   >Contato</a
                 >
