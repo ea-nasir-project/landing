@@ -24,7 +24,7 @@ const { position = "sticky" } = Astro.props;
         type="button"
         command="show-modal"
         commandfor="mobile-menu"
-        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-emerald-200"
       >
         <span class="sr-only">Abrir menu principal</span>
         <svg
@@ -44,12 +44,16 @@ const { position = "sticky" } = Astro.props;
       </button>
     </div>
     <div class="hidden lg:flex lg:gap-x-12 lg:items-center">
-      <a href="/sobre" class="text-sm/6 font-semibold text-gray-900">Sobre</a>
+      <a
+        href="/sobre"
+        class="text-base/6 font-semibold text-emerald-200 hover:text-emerald-400 transition-colors"
+        >Sobre</a
+      >
 
       <!-- Dropdown Serviços -->
       <div class="relative group">
         <button
-          class="inline-flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900"
+          class="inline-flex items-center gap-x-1 text-base/6 font-semibold text-emerald-200 hover:text-emerald-400 transition-colors"
         >
           <span>Serviços</span>
           <svg
@@ -69,69 +73,69 @@ const { position = "sticky" } = Astro.props;
           class="absolute -left-26 top-full z-10 mt-3 w-max opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
         >
           <div
-            class="w-full overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
+            class="w-full overflow-hidden rounded-3xl bg-emerald-50 shadow-lg ring-1 ring-emerald-900/10"
           >
             <div class="p-4">
               <div
-                class="group/item relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50"
+                class="group/item relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-emerald-100 transition-colors"
               >
                 <div class="flex-auto">
                   <a
                     href="/descarte-voluntario"
-                    class="block font-semibold text-gray-900"
+                    class="block font-semibold text-emerald-900"
                   >
                     Descarte Voluntário
                     <span class="absolute inset-0"></span>
                   </a>
-                  <p class="mt-1 text-gray-600">
-                    Pontos de coleta para descarte responsável
+                  <p class="mt-1 text-emerald-700">
+                    Pontos de coleta para descarte
                   </p>
                 </div>
               </div>
               <div
-                class="group/item relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50"
+                class="group/item relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-emerald-100 transition-colors"
               >
                 <div class="flex-auto">
                   <a
                     href="/compostagem-residencial"
-                    class="block font-semibold text-gray-900"
+                    class="block font-semibold text-emerald-900"
                   >
                     Compostagem Residencial
                     <span class="absolute inset-0"></span>
                   </a>
-                  <p class="mt-1 text-gray-600">
+                  <p class="mt-1 text-emerald-700">
                     Soluções para compostagem em casa
                   </p>
                 </div>
               </div>
               <div
-                class="group/item relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50"
+                class="group/item relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-emerald-100 transition-colors"
               >
                 <div class="flex-auto">
                   <a
                     href="/lojistas-e-parceiros"
-                    class="block font-semibold text-gray-900"
+                    class="block font-semibold text-emerald-900"
                   >
                     Lojistas e Parceiros
                     <span class="absolute inset-0"></span>
                   </a>
-                  <p class="mt-1 text-gray-600">
+                  <p class="mt-1 text-emerald-700">
                     Parcerias para coleta em estabelecimentos
                   </p>
                 </div>
               </div>
               <div
-                class="group/item relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50"
+                class="group/item relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-emerald-100 transition-colors"
               >
                 <div class="flex-auto">
                   <a
                     href="/empresas-e-industrias"
-                    class="block font-semibold text-gray-900"
+                    class="block font-semibold text-emerald-900"
                   >
                     Empresas e Indústrias
                     <span class="absolute inset-0"></span>
                   </a>
-                  <p class="mt-1 text-gray-600">
+                  <p class="mt-1 text-emerald-700">
                     Logística reversa para grandes volumes
                   </p>
                 </div>
@@ -141,10 +145,15 @@ const { position = "sticky" } = Astro.props;
         </div>
       </div>
 
-      <a href="/blog" class="text-sm/6 font-semibold text-gray-900">Blog</a>
+      <a
+        href="/blog"
+        class="text-base/6 font-semibold text-emerald-200 hover:text-emerald-400 transition-colors"
+        >Blog</a
+      >
       <a
         href="https://wa.me/5511953562620?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20e-renova."
-        class="text-sm/6 font-semibold text-gray-900">Contato</a
+        class="text-base/6 font-semibold text-emerald-200 hover:text-emerald-400 transition-colors"
+        >Contato</a
       >
     </div>
     <!-- <div class="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -168,7 +177,7 @@ const { position = "sticky" } = Astro.props;
               type="button"
               command="close"
               commandfor="mobile-menu"
-              class="-m-2.5 rounded-md p-2.5 text-gray-700"
+              class="-m-2.5 rounded-md p-2.5 text-emerald-800"
             >
               <span class="sr-only">Fechar menu</span>
               <svg
@@ -192,36 +201,36 @@ const { position = "sticky" } = Astro.props;
               <div class="space-y-2 py-6">
                 <a
                   href="/sobre"
-                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-emerald-900 hover:bg-emerald-100"
                   >Sobre</a
                 >
 
                 <!-- Serviços com submenu -->
                 <div class="-mx-3">
                   <div
-                    class="block px-3 py-2 text-base/7 font-semibold text-gray-900"
+                    class="block px-3 py-2 text-base/7 font-semibold text-emerald-900"
                   >
                     Serviços
                   </div>
                   <div class="pl-6 space-y-2">
                     <a
                       href="/descarte-voluntario"
-                      class="-mx-3 block rounded-lg px-3 py-2 text-sm/6 text-gray-600 hover:bg-gray-50"
+                      class="block rounded-lg px-3 py-2 text-sm/6 text-emerald-700 hover:bg-emerald-100"
                       >Descarte Voluntário</a
                     >
                     <a
                       href="/compostagem-residencial"
-                      class="-mx-3 block rounded-lg px-3 py-2 text-sm/6 text-gray-600 hover:bg-gray-50"
+                      class="block rounded-lg px-3 py-2 text-sm/6 text-emerald-700 hover:bg-emerald-100"
                       >Compostagem Residencial</a
                     >
                     <a
                       href="/lojistas-e-parceiros"
-                      class="-mx-3 block rounded-lg px-3 py-2 text-sm/6 text-gray-600 hover:bg-gray-50"
+                      class="block rounded-lg px-3 py-2 text-sm/6 text-emerald-700 hover:bg-emerald-100"
                       >Lojistas e Parceiros</a
                     >
                     <a
                       href="/empresas-e-industrias"
-                      class="-mx-3 block rounded-lg px-3 py-2 text-sm/6 text-gray-600 hover:bg-gray-50"
+                      class="block rounded-lg px-3 py-2 text-sm/6 text-emerald-700 hover:bg-emerald-100"
                       >Empresas e Indústrias</a
                     >
                   </div>
@@ -229,14 +238,14 @@ const { position = "sticky" } = Astro.props;
 
                 <a
                   href="/blog"
-                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-emerald-900 hover:bg-emerald-100"
                   >Blog</a
                 >
               </div>
               <div class="py-6">
                 <a
                   href="https://wa.me/5511953562620?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20e-renova."
-                  class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-emerald-900 hover:bg-emerald-100"
                   >Contato</a
                 >
               </div>
