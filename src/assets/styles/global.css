@@ -10,9 +10,33 @@
     font-family: var(--font-barlow);
   }
 
+  /* Sections */
+  section {
+    @apply py-16 md:py-24;
+  }
+
+  /* Headings */
   h1,
   .heading-1 {
-    @apply text-4xl font-bold;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-sky-950;
     font-family: var(--font-barlow-condensed);
+  }
+
+  h2,
+  .heading-2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-sky-950;
+    font-family: var(--font-barlow-condensed);
+  }
+
+  h3,
+  .heading-3 {
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold mb-3;
+    font-family: var(--font-barlow-condensed);
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply px-4 md:px-6 lg:px-8;
   }
 }
