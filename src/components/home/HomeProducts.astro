@@ -1,36 +1,93 @@
 ---
-import homeTopBg from "@images/background/home-top.svg";
-import homeServicesBg from "@images/background/home-services.svg";
+import { Image } from "astro:assets";
+import HomeProductsCard from "@components/ui/HomeProductsCard.astro";
+
+// Images
+import boardsImg from "@images/boards.webp";
+import solarImg from "@images/solar.webp";
+import batteriesImg from "@images/bateries.webp";
+import compostingImg from "@images/composting.webp";
+import homeProductsBefore from "@images/background/home-products-before.svg";
+import homeProductsAfter from "@images/background/home-products-after.svg";
 ---
 
-<section>
-  <h2>Transforme resíduos em valor</h2>
-  <h3>Resíduos eletrônicos</h3>
-  <p>
-    A e-Renova oferece soluções ambientais completas, incluindo a reciclagem de
-    resíduos eletrônicos com coleta e destinação adequada, a realização de
-    campanhas de conscientização para escolas, empresas e comunidades
-  </p>
-  <h4>Eletrônicos</h4>
-  <p>
-    Computadores, notebooks, celulares, cabos, placas, fontes, impressoras,
-    eletrodomésticos e demais equipamentos em desuso.
-  </p>
-  <h4>Painéis solares</h4>
-  <p>
-    Módulos fotovoltaicos danificados, fora de uso ou substituídos em projetos
-    de energia solar.
-  </p>
-  <h4>Baterias</h4>
-  <p>
-    Baterias de lítio, chumbo, íon e outros tipos utilizados em notebooks,
-    nobreaks, veículos elétricos e sistemas solares
-  </p>
-  <h3>Compostagem residencial</h3>
-  <p>
-    Confira também nosso trabalho de compostagem residencial para quem deseja
-    adotar práticas sustentáveis no dia a dia
-  </p>
-  <h4>Compostagem</h4>
-  <p>Instalação de composteiras a domicilio para resíduos orgânicos</p>
+<section class="relative bg-emerald-50 py-20 z-0">
+  <!-- Decorative Top Background -->
+  <!-- <div
+    class="absolute top-[-78px] left-0 w-full h-[calc(100%+78px)] -z-10 pointer-events-none overflow-hidden"
+  >
+    <Image
+      src={homeProductsBefore}
+      alt=""
+      class="w-full h-full object-cover object-top opacity-50 md:opacity-100"
+    />
+  </div> -->
+
+  <!-- Decorative Bottom Background -->
+  <!-- <div
+    class="absolute bottom-0 left-0 w-full h-full -z-10 pointer-events-none overflow-hidden mix-blend-multiply opacity-30"
+  >
+    <Image src={homeProductsAfter} alt="" class="w-full h-full object-cover" />
+  </div> -->
+
+  <div class="container mx-auto">
+    <div class="mb-16">
+      <h2 class="heading-2">Transforme resíduos em valor</h2>
+    </div>
+
+    <!-- Electronics Section -->
+    <div class="mb-16">
+      <h3 class="heading-3 flex items-center gap-2 text-emerald-800 mb-8">
+        <span class="w-2 h-8 bg-emerald-500 rounded-full inline-block"></span>
+        Resíduos eletrônicos
+      </h3>
+
+      <div class="grid grid-cols-1 gap-6 justify-items-center">
+        <p class="text-lg text-gray-700 leading-relaxed max-w-5xl">
+          A e-Renova oferece soluções ambientais completas, incluindo a
+          reciclagem de resíduos eletrônicos com coleta e destinação adequada, a
+          realização de campanhas de conscientização para escolas, empresas e
+          comunidades.
+        </p>
+        <HomeProductsCard
+          title="Eletrônicos"
+          description="Computadores, notebooks, celulares, cabos, placas, fontes, impressoras, eletrodomésticos e demais equipamentos em desuso."
+          image={boardsImg}
+        />
+
+        <HomeProductsCard
+          title="Painéis solares"
+          description="Módulos fotovoltaicos danificados, fora de uso ou substituídos em projetos de energia solar."
+          image={solarImg}
+        />
+
+        <HomeProductsCard
+          title="Baterias"
+          description="Baterias de lítio, chumbo, íon e outros tipos utilizados em notebooks, nobreaks, veículos elétricos e sistemas solares."
+          image={batteriesImg}
+        />
+      </div>
+    </div>
+
+    <!-- Composting Section -->
+    <div>
+      <h3 class="heading-3 flex items-center gap-2 text-emerald-800 mb-8">
+        <span class="w-2 h-8 bg-emerald-500 rounded-full inline-block"></span>
+        Compostagem residencial
+      </h3>
+
+      <div class="grid grid-cols-1 gap-6 justify-items-center">
+        <p class="text-lg text-gray-700 leading-relaxed max-w-5xl">
+          Confira também nosso trabalho de compostagem residencial para quem
+          deseja adotar práticas sustentáveis no dia a dia, reduzindo o lixo
+          enviado a aterros e contribuindo para um ciclo mais natural.
+        </p>
+        <HomeProductsCard
+          title="Compostagem"
+          description="Instalação de composteiras a domicilio para resíduos orgânicos."
+          image={compostingImg}
+        />
+      </div>
+    </div>
+  </div>
 </section>
