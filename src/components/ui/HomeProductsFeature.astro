@@ -1,0 +1,71 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+interface Props {
+  title: string;
+  description: string;
+  image: ImageMetadata;
+  href: string;
+  reversed?: boolean;
+}
+
+const { title, description, image, href, reversed = false } = Astro.props;
+---
+
+<div
+  class={`flex flex-col lg:flex-row items-center gap-12 lg:gap-20 ${reversed ? "lg:flex-row-reverse" : ""}`}
+>
+  <!-- Text Content -->
+  <div class="flex-1 space-y-6">
+    <h3 class="heading-3 text-emerald-900">
+      {title}
+    </h3>
+    <p class="text-lg text-gray-700 leading-relaxed">
+      {description}
+    </p>
+    <div>
+      <a
+        href={href}
+        class="group inline-flex items-center text-emerald-600 font-semibold hover:text-emerald-700 transition-colors"
+      >
+        Saiba mais
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 ml-2 transform transition-transform group-hover:translate-x-1"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Image Content -->
+  <div class="flex-1 w-full relative">
+    <div
+      class="relative rounded-3xl overflow-hidden aspect-video shadow-xl lg:aspect-[4/3] group"
+    >
+      <div
+        class="absolute inset-0 bg-emerald-900/10 group-hover:bg-transparent transition-colors duration-500 z-10"
+      >
+      </div>
+      <Image
+        src={image}
+        alt={title}
+        class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+      />
+    </div>
+    <!-- Decorative Elements -->
+    <div
+      class={`absolute -z-10 w-full h-full border-2 border-emerald-100 rounded-3xl top-4 ${reversed ? "left-4" : "-right-4"} hidden lg:block`}
+    >
+    </div>
+  </div>
+</div>
