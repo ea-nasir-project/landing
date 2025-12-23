@@ -6,9 +6,23 @@ interface Props {
 }
 
 const { position = "sticky" } = Astro.props;
+const pathname = Astro.url.pathname;
+const isHome = pathname === "/";
+
+const headerClass = isHome
+  ? `${position} inset-x-0 top-0 z-50`
+  : `${position} inset-x-0 top-0 z-50 bg-emerald-950/90 backdrop-blur-md shadow-md transition-all duration-300`;
+
+const linkClass = isHome
+  ? "text-base/6 font-semibold text-emerald-100 hover:text-white transition-colors"
+  : "text-base/6 font-semibold text-emerald-50 hover:text-white transition-colors";
+
+const buttonClass = isHome
+  ? "inline-flex items-center gap-x-1 text-base/6 font-semibold text-emerald-100 hover:text-white transition-colors"
+  : "inline-flex items-center gap-x-1 text-base/6 font-semibold text-emerald-50 hover:text-white transition-colors";
 ---
 
-<header class={`${position} inset-x-0 top-0 z-50`}>
+<header class={headerClass}>
   <div class="max-w-5xl mx-auto">
     <nav
       aria-label="Global"
@@ -45,17 +59,11 @@ const { position = "sticky" } = Astro.props;
         </button>
       </div>
       <div class="hidden lg:flex lg:gap-x-12 lg:items-center">
-        <a
-          href="/sobre"
-          class="text-base/6 font-semibold text-emerald-200 hover:text-emerald-400 transition-colors"
-          >Sobre</a
-        >
-  
+        <a href="/sobre" class={linkClass}>Sobre</a>
+
         <!-- Dropdown Serviços -->
         <div class="relative group">
-          <button
-            class="inline-flex items-center gap-x-1 text-base/6 font-semibold text-emerald-200 hover:text-emerald-400 transition-colors"
-          >
+          <button class={buttonClass}>
             <span>Serviços</span>
             <svg
               viewBox="0 0 20 20"
@@ -145,16 +153,11 @@ const { position = "sticky" } = Astro.props;
             </div>
           </div>
         </div>
-  
-        <a
-          href="/blog"
-          class="text-base/6 font-semibold text-emerald-200 hover:text-emerald-400 transition-colors"
-          >Blog</a
-        >
+
+        <a href="/blog" class={linkClass}>Blog</a>
         <a
           href="https://wa.me/5511953562620?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20e-renova."
-          class="text-base/6 font-semibold text-emerald-200 hover:text-emerald-400 transition-colors"
-          >Contato</a
+          class={linkClass}>Contato</a
         >
       </div>
       <!-- <div class="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -205,7 +208,7 @@ const { position = "sticky" } = Astro.props;
                     class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-emerald-900 hover:bg-emerald-100"
                     >Sobre</a
                   >
-  
+
                   <!-- Serviços com submenu -->
                   <div class="-mx-3">
                     <div
@@ -236,7 +239,7 @@ const { position = "sticky" } = Astro.props;
                       >
                     </div>
                   </div>
-  
+
                   <a
                     href="/blog"
                     class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-emerald-900 hover:bg-emerald-100"
