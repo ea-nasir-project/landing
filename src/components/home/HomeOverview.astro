@@ -1,0 +1,136 @@
+---
+import homeTopBg from "@images/background/home-top.svg";
+import homeServicesBg from "@images/background/home-services.svg";
+
+import Card from "@components/ui/HomeOverviewCard.astro";
+import CubeIcon from "@icons/cube-outline-svgrepo-com.svg?raw";
+import DollarIcon from "@icons/dollar-svgrepo-com.svg?raw";
+import LeafIcon from "@icons/leaf-svgrepo-com.svg?raw";
+import SecurityIcon from "@icons/security-safe-svgrepo-com.svg?raw";
+---
+
+<section class="bg-linear-to-b from-emerald-50 to-white">
+  <div class="container mx-auto">
+    <div class="mb-20">
+      <h2
+        class="text-4xl md:text-5xl font-bold text-sky-950 leading-tight max-w-3xl font-barlow-condensed"
+      >
+        Muito além do descarte, construindo um futuro sustentável
+      </h2>
+    </div>
+
+    <div class="space-y-16">
+      <div class="group">
+        <div class="flex items-start gap-4">
+          <div
+            class="w-1 h-[-webkit-fill-available] bg-linear-to-b from-emerald-700 to-emerald-300 rounded-full mt-1 group-hover:opacity-80 transition-opacity"
+          >
+          </div>
+          <div>
+            <h3
+              class="text-3xl font-bold text-emerald-800 mb-2 group-hover:text-emerald-700 transition-colors"
+            >
+              Reciclagem de resíduos eletrônicos
+            </h3>
+            <span
+              class="text-sm font-medium text-emerald-600 uppercase tracking-wide"
+            >
+              Soluções em economia circular
+            </span>
+            <p
+              class="text-lg text-gray-700 leading-relaxed pl-4 max-w-3xl mt-3"
+            >
+              Coleta e destinação ambientalmente correta de equipamentos
+              eletroeletrônicos, com reaproveitamento responsável de materiais,
+              redução de impactos ambientais e acompanhamento transparente de
+              todo o ciclo de reciclagem.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="flex items-start gap-4">
+          <div
+            class="w-1 h-[-webkit-fill-available] bg-linear-to-b from-emerald-700 to-emerald-300 rounded-full mt-1 group-hover:opacity-80 transition-opacity"
+          >
+          </div>
+          <div>
+            <h3
+              class="text-3xl font-bold text-emerald-800 mb-2 group-hover:text-emerald-700 transition-colors"
+            >
+              Campanhas de Conscientização
+            </h3>
+            <span
+              class="text-sm font-medium text-emerald-600 uppercase tracking-wide"
+            >
+              Gestão sustentável e educação ambiental
+            </span>
+            <p
+              class="text-lg text-gray-700 leading-relaxed pl-4 max-w-3xl mt-3"
+            >
+              Ações educativas direcionadas a escolas, empresas e comunidades,
+              promovendo mudança de comportamento, consumo consciente e
+              fortalecimento de práticas sustentáveis alinhadas à economia
+              circular.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="flex items-start gap-4 mb-3">
+          <div
+            class="w-1 h-[-webkit-fill-available] bg-linear-to-b from-emerald-700 to-emerald-300 rounded-full mt-1 group-hover:opacity-80 transition-opacity"
+          >
+          </div>
+          <div>
+            <h3
+              class="text-3xl font-bold text-emerald-800 mb-2 group-hover:text-emerald-700 transition-colors"
+            >
+              Instalação de composteiras em residências
+            </h3>
+            <span
+              class="text-sm font-medium text-emerald-600 uppercase tracking-wide"
+            >
+              Tecnologias sustentáveis para o dia a dia
+            </span>
+            <p
+              class="text-lg text-gray-700 leading-relaxed pl-4 max-w-3xl mt-3"
+            >
+              Soluções de compostagem domiciliar que facilitam a adoção de
+              práticas sustentáveis em casa, reduzindo resíduos orgânicos e
+              ampliando o impacto ambiental positivo de forma simples e
+              acessível.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-20 pt-16 border-t border-emerald-100"></div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-4">
+      <Card
+        title="Gere renda e impacto positivo"
+        description="Receba pelos materiais descartados e apoie a preservação do meio ambiente"
+        icon={DollarIcon}
+      />
+      <Card
+        title="Logística sem complicações"
+        description="Processo simples e transparente, com acompanhamento do envio e entrega"
+        icon={CubeIcon}
+      />
+      <Card
+        title="Segurança da informação"
+        description="Todos os dispositivos passam por destruição de dados certificada, com certificado de conformidade"
+        icon={SecurityIcon}
+      />
+      <Card
+        title="Responsabilidade ambiental"
+        description="Garantimos que seu material seja processado de forma legal, responsável e transparente"
+        icon={LeafIcon}
+      />
+    </div>
+  </div>
+</section>

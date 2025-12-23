@@ -23,6 +23,7 @@ export default defineConfig({
         '@scripts': path.resolve('./src/assets/scripts'),
         '@styles': path.resolve('./src/assets/styles'),
         '@images': path.resolve('./src/assets/images'),
+        '@icons': path.resolve('./src/assets/icons'),
       },
     },
   },

@@ -1,7 +1,11 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import HeadWebsite from "@components/HeadWebSite.astro";
-import Hero from "@components/Hero.astro";
+import Hero from "@components/home/HomeHero.astro";
+import Products from "@components/home/HomeProducts.astro";
+import Services from "@components/home/HomeServices.astro";
+import Overview from "@components/home/HomeOverview.astro";
+import BlogPreview from "@components/home/HomeBlogPreview.astro";
 ---
 
 <BaseLayout headerPosition="absolute">
@@ -10,9 +14,24 @@ import Hero from "@components/Hero.astro";
     title="e-Renova | Logística reversa e reciclagem de eletrônicos"
     description="Plataforma de logística reversa para descarte correto de eletrônicos, conectando consumidores, empresas e pontos de coleta."
   />
-  <div class="bg-white">
-    <Hero />
+  <Hero />
+  <Overview />
+  <Products />
+  <Services />
+  <BlogPreview />
+  <!-- <div
+    class="relative bg-cover bg-no-repeat bg-emerald-50"
+    style={`background-image: url(${homeTopBg.src});`}
+  >
+    <h1>Transforme seu lixo eletrônico em impacto positivo</h1>
   </div>
-  <h1>Transforme seu lixo eletrônico em impacto positivo</h1>
-  
+  <div
+    class="relative bg-cover bg-no-repeat bg-emerald-100"
+    style={`background-image: url(${homeServicesBg.src}); background-size: 100vw auto;`}
+  >
+    <h1>Transforme seu lixo eletrônico em impacto positivo</h1>
+  </div>
+  <div class="bg-emerald-200 min-h-">
+    <h1>Transforme seu lixo eletrônico em impacto positivo</h1>
+  </div> -->
 </BaseLayout>

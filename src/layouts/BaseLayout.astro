@@ -16,7 +16,9 @@ const { headerPosition = "sticky" } = Astro.props;
   </head>
   <body>
     <Header position={headerPosition} />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>

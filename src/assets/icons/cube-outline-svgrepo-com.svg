@@ -1,19 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg width="800px" height="800px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-  <title>ionicons-v5-h</title>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="w-8 h-8 text-green-900 transition-transform duration-300 group-hover:scale-110"
+>
   <path
-    d="M448,341.37V170.61A32,32,0,0,0,432.11,143l-152-88.46a47.94,47.94,0,0,0-48.24,0L79.89,143A32,32,0,0,0,64,170.61V341.37A32,32,0,0,0,79.89,369l152,88.46a48,48,0,0,0,48.24,0l152-88.46A32,32,0,0,0,448,341.37Z"
-    style="fill:none;stroke:#14EAAE;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"
-  />
-  <polyline
-    points="69 153.99 256 263.99 443 153.99"
-    style="fill:none;stroke:#14EAAE;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"
-  />
-  <line
-    x1="256"
-    y1="463.99"
-    x2="256"
-    y2="263.99"
-    style="fill:none;stroke:#14EAAE;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"
-  />
+    d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"
+  >
+  </path>
+  <path d="M12 22V12"></path>
+  <path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"></path>
+  <path d="m7.5 4.27 9 5.15"></path>
 </svg>
