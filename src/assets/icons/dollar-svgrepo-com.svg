@@ -8,7 +8,7 @@
   stroke-width="2"
   stroke-linecap="round"
   stroke-linejoin="round"
-  class="w-8 h-8 text-green-900 transition-transform duration-300 group-hover:scale-110"
+  class="w-8 h-8 transition-transform duration-300 group-hover:scale-110"
 >
   <circle cx="12" cy="12" r="10"></circle>
   <path d="M12 6V18"></path>
