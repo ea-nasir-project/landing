@@ -1,13 +1,367 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import HeadWebsite from "@components/HeadWebSite.astro";
+import HeadLegal from "@components/HeadLegal.astro";
+
+const lastUpdate = "02/01/2026";
 ---
 
 <BaseLayout>
-  <HeadWebsite
+  <HeadLegal
     slot="head"
     title="Termos de Uso | e-Renova"
-    description="Termos e condições para uso do site e dos serviços oferecidos pela e-Renova."
+    description="Termos de uso da plataforma e-Renova. Leia atentamente as regras de utilização dos nossos serviços."
   />
-  <h1>Termos de Uso</h1>
+
+  <main class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <!-- Header -->
+      <div class="mb-12">
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+          Termos de uso
+        </h1>
+        <p class="text-slate-500 mb-6">
+          Última atualização: <strong>{lastUpdate}</strong>
+        </p>
+
+        <div class="text-slate-600 leading-relaxed text-lg space-y-4">
+          <p>Bem-vindo à e-renova.</p>
+          <p>
+            Ao acessar nosso site, criar uma conta ou utilizar qualquer
+            funcionalidade da plataforma, você concorda com estes Termos de Uso.
+            Nós da e-renova trabalhamos com paixão e propósito e queremos
+            proporcionar uma experiência satisfatória com a utilização dos
+            nossos serviços. Para tanto, leia atentamente antes de continuar.
+          </p>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div
+        class="prose prose-slate prose-lg max-w-none space-y-8 text-slate-600"
+      >
+        <!-- 1. Sobre a plataforma -->
+        <section>
+          <h2 class="text-xl md:text-2xl font-bold text-slate-800 mb-4">
+            1. Sobre a plataforma
+          </h2>
+          <p class="mb-4">
+            A e-renova é um serviço digital que facilita o envio, avaliação e
+            compra de resíduos eletrônicos.
+          </p>
+          <p class="mb-4">A plataforma permite:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Consulta de valores estimados de sucata eletrônica;</li>
+            <li>Criação de remessas via logística reversa;</li>
+            <li>Acompanhamento do envio;</li>
+            <li>Recebimento de pagamento após avaliação física.</li>
+          </ul>
+          <p class="mt-4">
+            A plataforma e-renova trata-se de uma operação comercial baseada em
+            compra e venda de materiais.
+          </p>
+        </section>
+
+        <!-- 2. Cadastro e informações do usuário -->
+        <section>
+          <h2 class="text-xl md:text-2xl font-bold text-slate-800 mb-4">
+            2. Cadastro e informações do usuário
+          </h2>
+          <p class="mb-4">
+            Para utilizar a plataforma, o usuário deve fornecer dados
+            verdadeiros, completos e atualizados.
+          </p>
+          <p class="mb-4">O usuário é responsável por:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Manter sigilo sobre suas credenciais de acesso;</li>
+            <li>Informar dados corretos sobre os itens enviados;</li>
+            <li>Revisar a remessa antes de confirmar;</li>
+            <li>
+              Garantir que os materiais enviados correspondem à descrição
+              cadastrada.
+            </li>
+          </ul>
+          <p class="mt-4">
+            A e-renova pode suspender contas que violem estes Termos ou tentem
+            fraudar o processo.
+          </p>
+        </section>
+
+        <!-- 3. Estimativa de valor -->
+        <section>
+          <h2 class="text-xl md:text-2xl font-bold text-slate-800 mb-4">
+            3. Estimativa de valor
+          </h2>
+          <p class="mb-4">
+            Os valores exibidos no site são <strong>estimativas</strong>,
+            calculadas com base em tabelas internas, histórico e peso informado
+            pelo usuário.
+          </p>
+          <p class="mb-4">
+            A estimativa <strong>não é garantia de pagamento</strong>.
+          </p>
+          <p class="mb-4">O valor final é definido após:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Recebimento da remessa;</li>
+            <li>Triagem física;</li>
+            <li>Conferência do peso real;</li>
+            <li>Verificação do tipo e condição dos materiais.</li>
+          </ul>
+          <p class="mt-4">
+            Divergências entre a descrição e os itens enviados podem alterar o
+            valor final ou resultar em recusa total da remessa.
+          </p>
+        </section>
+
+        <!-- 4. Envio dos materiais -->
+        <section>
+          <h2 class="text-xl md:text-2xl font-bold text-slate-800 mb-4">
+            4. Envio dos materiais
+          </h2>
+          <p class="mb-4">O envio é responsabilidade do remetente.</p>
+          <p class="mb-4">O usuário deve:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Seguir as instruções de embalagem e segurança;</li>
+            <li>Postar a remessa corretamente;</li>
+            <li>
+              Garantir que não há itens proibidos, perigosos ou fora dos
+              critérios da e-renova;
+            </li>
+            <li>Anexar o código de rastreio no sistema.</li>
+          </ul>
+          <p class="mt-4">
+            A e-renova <strong
+              >não se responsabiliza por danos ou extravios causados pelos
+              Correios ou transportadoras</strong
+            >.
+          </p>
+        </section>
+
+        <!-- 5. Triagem, avaliação e recusa de remessas -->
+        <section>
+          <h2 class="text-xl md:text-2xl font-bold text-slate-800 mb-4">
+            5. Triagem, avaliação e recusa de remessas
+          </h2>
+          <p class="mb-4">A e-renova pode recusar remessas quando houver:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Materiais perigosos sem autorização;</li>
+            <li>
+              Itens ilegais, falsificados, roubados ou de origem duvidosa;
+            </li>
+            <li>
+              Divergência grave entre o que foi informado e o que foi enviado;
+            </li>
+            <li>Danos que inviabilizem avaliação.</li>
+          </ul>
+          <p class="mt-4 mb-4">Se a remessa for recusada, a e-renova poderá:</p>
+          <p class="mb-4">
+            Devolver o material ao remetente, mediante pagamento prévio do frete
+            de retorno (quando aplicável).
+          </p>
+          <p class="mb-4">
+            Realizar o descarte ambientalmente adequado, sem compensação, caso o
+            remetente:
+          </p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>não responda aos contatos em até 15 dias corridos,</li>
+            <li>
+              não efetue o pagamento do frete de devolução dentro do prazo
+              informado,
+            </li>
+            <li>
+              se recuse injustificadamente a aceitar a recusa ou as condições de
+              retorno,
+            </li>
+            <li>
+              envie itens proibidos, perigosos ou ilegais, que não possam ser
+              devolvidos.
+            </li>
+          </ul>
+          <p class="mt-4">
+            A e-renova poderá comunicar o descarte definitivo por e-mail ou pelo
+            painel do usuário.
+          </p>
+        </section>
+
+        <!-- 6. Pagamento -->
+        <section>
+          <h2 class="text-xl md:text-2xl font-bold text-slate-800 mb-4">
+            6. Pagamento
+          </h2>
+          <p class="mb-4">
+            O pagamento ao usuário é realizado somente após a conclusão de todas
+            as etapas operacionais, que incluem:
+          </p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>
+              <strong>Recebimento</strong> da remessa no centro de triagem.
+            </li>
+            <li>
+              <strong>Triagem inicial</strong> para verificar integridade, itens proibidos
+              e correspondência básica.
+            </li>
+            <li>
+              <strong>Conferência detalhada</strong> entre o material enviado e o
+              informado na plataforma.
+            </li>
+            <li><strong>Pesagem real</strong> de cada categoria de item.</li>
+            <li>
+              <strong>Avaliação técnica</strong> quanto ao tipo, condição e aceitação
+              do material.
+            </li>
+            <li>
+              <strong>Precificação final</strong> com base nos pesos reais e nas tabelas
+              vigentes.
+            </li>
+            <li>
+              <strong>Emissão do Relatório de Conferência</strong>, contendo
+              divergências, valores ajustados e itens recusados.
+            </li>
+          </ul>
+          <p class="mt-4 mb-4">
+            Após o relatório ser gerado, o valor final depende do aceite do
+            usuário.
+          </p>
+          <p class="mb-4">
+            Somente após a confirmação do usuário, o processamento financeiro é
+            iniciado.
+          </p>
+          <p class="mb-4">
+            A e-renova tem o prazo de até 7 dias úteis após o recebimento da
+            remessa para concluir o processo de avaliação e emissão do
+            pagamento.
+          </p>
+          <p class="mb-4">
+            Antes da liberação do valor, a e-renova poderá solicitar informações
+            adicionais para validação de identidade ou confirmação da chave PIX.
+          </p>
+          <p class="mb-4">
+            O prazo médio das etapas operacionais é informado na plataforma,
+            podendo variar conforme volume e demanda.
+          </p>
+          <p class="mb-4">
+            A e-renova pode solicitar dados adicionais para confirmação de
+            identidade antes de efetuar pagamentos.
+          </p>
+        </section>
+
+        <!-- 7. Uso do site e da plataforma -->
+        <section>
+          <h2 class="text-xl md:text-2xl font-bold text-slate-800 mb-4">
+            7. Uso do site e da plataforma
+          </h2>
+          <p class="mb-4">O usuário concorda em <strong>não</strong>:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Tentar acessar áreas restritas ou manipular o sistema;</li>
+            <li>Violar segurança, engenharia reversa ou explorar falhas;</li>
+            <li>
+              Modificar, copiar, revender ou distribuir qualquer parte da
+              plataforma;
+            </li>
+            <li>Usar o serviço para práticas ilícitas ou enganosas.</li>
+          </ul>
+          <p class="mt-4">
+            A violação pode resultar em suspensão imediata da conta.
+          </p>
+        </section>
+
+        <!-- 8. Conteúdos e propriedade intelectual -->
+        <section>
+          <h2 class="text-xl md:text-2xl font-bold text-slate-800 mb-4">
+            8. Conteúdos e propriedade intelectual
+          </h2>
+          <p class="mb-4">
+            Todos os textos, imagens, marcas, tabelas, design e código pertencem
+            à e-renova e são protegidos por lei.
+          </p>
+          <p class="mb-4">
+            É proibida a reprodução total ou parcial sem autorização.
+          </p>
+        </section>
+
+        <!-- 9. Funcionalidades, disponibilidade e alterações -->
+        <section>
+          <h2 class="text-xl md:text-2xl font-bold text-slate-800 mb-4">
+            9. Funcionalidades, disponibilidade e alterações
+          </h2>
+          <p class="mb-4">A plataforma pode passar por:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Manutenção;</li>
+            <li>Atualização;</li>
+            <li>Indisponibilidade técnica;</li>
+            <li>Mudanças de preço, regras ou funcionalidades.</li>
+          </ul>
+          <p class="mt-4">
+            A e-renova pode alterar estes Termos a qualquer momento, com aviso
+            no site.
+          </p>
+        </section>
+
+        <!-- 10. Privacidade e dados pessoais -->
+        <section>
+          <h2 class="text-xl md:text-2xl font-bold text-slate-800 mb-4">
+            10. Privacidade e dados pessoais
+          </h2>
+          <p>
+            O tratamento de dados pessoais segue nossa <strong
+              ><a
+                href="/politica-de-privacidade"
+                class="text-emerald-600 hover:text-emerald-700 font-medium transition-colors"
+                >Política de Privacidade</a
+              ></strong
+            >, disponível no site.
+          </p>
+        </section>
+
+        <!-- 11. Limite de responsabilidade -->
+        <section>
+          <h2 class="text-xl md:text-2xl font-bold text-slate-800 mb-4">
+            11. Limite de responsabilidade
+          </h2>
+          <p class="mb-4">
+            A e-renova <strong>não se responsabiliza</strong> por:
+          </p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Atrasos ou falhas dos Correios ou transportadoras;</li>
+            <li>Dados incorretos informados pelo usuário;</li>
+            <li>Danos ou perdas decorrentes de mau uso da plataforma;</li>
+            <li>Indisponibilidade temporária do sistema.</li>
+          </ul>
+          <p class="mt-4">
+            A e-renova responde somente pelos serviços descritos neste
+            documento.
+          </p>
+        </section>
+
+        <!-- 12. Legislação aplicável -->
+        <section>
+          <h2 class="text-xl md:text-2xl font-bold text-slate-800 mb-4">
+            12. Legislação aplicável
+          </h2>
+          <p class="mb-4">Este documento é regido pelas leis brasileiras.</p>
+          <p>
+            Qualquer conflito será resolvido no foro da comarca do usuário,
+            conforme o Código de Defesa do Consumidor.
+          </p>
+        </section>
+
+        <!-- 13. Contato -->
+        <section>
+          <h2 class="text-xl md:text-2xl font-bold text-slate-800 mb-4">
+            13. Contato
+          </h2>
+          <p>
+            Dúvidas sobre estes Termos podem ser enviadas para:
+            <br />
+            <span class="inline-flex items-center gap-2 mt-2">
+              📩 <a
+                href="mailto:contato@e-renova.com.br"
+                class="text-emerald-600 hover:text-emerald-700 font-medium transition-colors"
+                >contato@e-renova.com.br</a
+              >
+            </span>
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
 </BaseLayout>
