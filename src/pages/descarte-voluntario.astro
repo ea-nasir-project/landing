@@ -1,13 +1,92 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
-import HeadWebsite from "@components/HeadWebSite.astro";
+import ServiceLayout from "@layouts/ServiceLayout.astro";
+import individualImg from "@images/individual.webp";
+
+const title = "Descarte voluntário nos pontos de coleta";
+const subtitle = "Faça o descarte consciente";
+const description =
+  "Faça o descarte consciente de eletrônicos em pontos de coleta parceiros da e‑Renova.";
+
+const faqs = [
+  {
+    question: "O que posso descartar nos pontos de coleta?",
+    answer:
+      "Clique nos pontos de coleta marcados no mapa e confira as linhas de produtos que cada parceiro e‑Renova recebe.",
+  },
+  {
+    question: "Preciso pagar para descartar?",
+    answer:
+      "Não. O descarte nos pontos de coleta parceiros da e‑Renova é totalmente gratuito para o consumidor final.",
+  },
+  {
+    question: "Vocês fazem retirada em casa?",
+    answer:
+      "A retirada residencial depende de disponibilidade e volume. Entre em contato conosco para verificar condições.",
+  },
+  {
+    question: "O que acontece com os materiais coletados?",
+    answer:
+      "Os materiais são recolhidos pela nossa frota e encaminhados para nosso centro de triagem, onde passam por um processo rigoroso de separação, manufatura reversa e destinação ambientalmente correta.",
+  },
+  {
+    question: "O que acontece com os dados contidos nos eletrônicos?",
+    answer:
+      "Todos os dispositivos passam por destruição de dados certificada, garantindo eliminação total das informações.",
+  },
+  {
+    question: "Como saber se um ponto de coleta está ativo?",
+    answer:
+      "Recomendamos verificar no mapa acima os locais parceiros. Mantemos a lista atualizada constantemente.",
+  },
+];
 ---
 
-<BaseLayout>
-  <HeadWebsite
-    slot="head"
-    title="Descarte voluntário de eletrônicos | e-Renova"
-    description="Faça o descarte consciente de eletrônicos em pontos de coleta parceiros da e-Renova."
-  />
-  <h1>Descarte consciente nos pontos de coleta</h1>
-</BaseLayout>
+<ServiceLayout
+  title={title}
+  subtitle={subtitle}
+  description={description}
+  heroImage={individualImg}
+  heroImageAlt="Pessoa descartando eletrônico em ponto de coleta e‑Renova"
+  faqs={faqs}
+>
+  <div slot="hero-text" class="space-y-4">
+    <p>
+      O descarte correto evita contaminação do solo, da água e do ar, reduz o
+      impacto ambiental e garante que os materiais retornem à cadeia produtiva
+      de forma segura.
+    </p>
+    <p>
+      Você sabia que a manipulação inadequada de resíduos eletrônicos pode
+      reduzir significativamente a expectativa de vida em comunidades
+      vulneráveis? Em contrapartida, o descarte correto fortalece toda a cadeia
+      de reciclagem e amplia a geração de empregos no setor.
+    </p>
+    <p>
+      A atuação da e‑Renova integra princípios de economia circular, ampliando a
+      recuperação de recursos e gerando oportunidades de trabalho em comunidades
+      em situação de vulnerabilidade.
+    </p>
+  </div>
+
+  <div slot="secondary-text" class="space-y-4">
+    <p>
+      Encontre o ponto de coleta mais próximo, descarte seu eletrônico com
+      nossos parceiros, contribua para um futuro mais sustentável e apoie o
+      processo de reciclagem e economia circular.
+    </p>
+    <p>
+      Nos pontos de coleta e‑Renova, você dispõe de um local seguro para o
+      descarte de resíduos eletrônicos na sua região.
+    </p>
+    <p>
+      Para retirada residencial, entre em contato com a equipe e‑Renova e
+      verifique a disponibilidade e condições.
+    </p>
+  </div>
+
+  <span slot="map-lead">
+    Encontre o ponto de descarte voluntário mais próximo. <b>Toque ou clique</b> nos
+    marcadores do mapa para ver o endereço e os materiais aceitos em cada ponto de
+    coleta.
+  </span>
+</ServiceLayout>

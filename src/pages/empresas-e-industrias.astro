@@ -1,13 +1,88 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
-import HeadWebsite from "@components/HeadWebSite.astro";
+import ServiceLayout from "@layouts/ServiceLayout.astro";
+import companiesImg from "@images/companies.webp";
+
+const title = "Soluções de coleta para empresas e indústrias";
+const subtitle = "Agende a solução ideal para sua empresa";
+const description =
+  "Logística reversa estruturada e certificada para grandes geradores de resíduos eletrônicos.";
+
+const faqs = [
+  {
+    question: "Vocês emitem certificado de destruição de dados?",
+    answer:
+      "Sim. Para todos os equipamentos de TI, realizamos a destruição segura dos dados (Wipe ou destruição física) e emitimos um laudo técnico com certificado de garantia de destruição, em conformidade com a LGPD.",
+  },
+  {
+    question: "Vocês realizam a remoção dos equipamentos na empresa?",
+    answer:
+      "Sim. Dispomos de frota própria e equipe especializada para realizar a retirada dos equipamentos diretamente em sua empresa, com agendamento prévio e manifesto de transporte.",
+  },
+  {
+    question: "Quais tipos de resíduos vocês coletam de empresas?",
+    answer:
+      "Coletamos todo o parque de TI (computadores, servidores, monitores, impressoras, cabeamento), além de eletroeletrônicos em geral, ar-condicionado e sucata industrial eletrônica.",
+  },
+  {
+    question: "Fornecem laudo de destinação final?",
+    answer:
+      "Com certeza. Emitimos o Certificado de Destinação Final (CDF), inventários de resíduos e relatórios ESG para comprovar que sua empresa realizou o descarte correto, essenciais para auditorias ISO 14001.",
+  },
+  {
+    question: "Qual a rastreabilidade do processo?",
+    answer:
+      "Todo o processo é rastreável por lote, nota fiscal ou número de série, compatível com auditorias ISO 14001 e ISO 27001.",
+  },
+];
 ---
 
-<BaseLayout>
-  <HeadWebsite
-    slot="head"
-    title="Empresas e indústrias | Coleta e logística reversa e-Renova"
-    description="Soluções de coleta e logística reversa para empresas e indústrias, com conformidade ambiental e rastreabilidade."
-  />
-  <h1>Soluções de coleta para empresas e indústrias</h1>
-</BaseLayout>
+<ServiceLayout
+  title={title}
+  subtitle={subtitle}
+  description={description}
+  heroImage={companiesImg}
+  heroImageAlt="Ambiente corporativo sustentável"
+  faqs={faqs}
+>
+  <div slot="hero-text" class="space-y-4">
+    <p>
+      Grandes empresas têm grandes responsabilidades. A gestão correta dos
+      ativos de TI e resíduos eletrônicos não é apenas uma obrigação legal, mas
+      um pilar fundamental da governança corporativa (ESG).
+    </p>
+    <p>
+      Empresas, indústrias e organizações frequentemente acumulam grandes
+      quantidades de eletrônicos e precisam de uma solução segura, documentada e
+      eficiente para destinação correta.
+    </p>
+    <p>
+      Auditorias, exigências regulatórias e metas ESG aumentam a necessidade de
+      rastreabilidade, certificação e processos seguros.
+    </p>
+    <p>
+      A e-Renova oferece suporte completo para a gestão de resíduos eletrônicos
+      corporativos, garantindo segurança da informação, conformidade legal e
+      rastreabilidade em todas as etapas do processo.
+    </p>
+  </div>
+
+  <div slot="secondary-text" class="space-y-4">
+    <p>
+      Nosso processo inclui inventário, coleta especializada, destruição
+      certificada de dados (em conformidade com a LGPD) e manufatura reversa.
+    </p>
+    <p>
+      Sua empresa recebe toda a documentação comprobatória (Manifesto de
+      Transporte e Certificado de Destinação Final), transformando um passivo
+      ambiental em um ativo reputacional.
+    </p>
+    <p>
+      Entre em contato conosco para uma análise e agendamento.
+    </p>
+  </div>
+
+  <span slot="map-lead">
+    Atendemos empresas em toda a região metropolitana. Entre em contato para
+    consultar a cobertura para coleta de grandes volumes em sua localidade.
+  </span>
+</ServiceLayout>

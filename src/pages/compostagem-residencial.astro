@@ -1,13 +1,72 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
-import HeadWebsite from "@components/HeadWebSite.astro";
+import ServiceLayout from "@layouts/ServiceLayout.astro";
+import compostingImg from "@images/composting1.webp";
+
+const title = "Compostagem Residencial";
+const subtitle = "Transforme seus resíduos orgânicos em vida sem sair de casa";
+const description =
+  "Transforme seus resíduos orgânicos em vida sem sair de casa.";
+
+const faqs = [
+  {
+    question: "Como funciona a coleta dos resíduos orgânicos?",
+    answer:
+      "Nós fornecemos um balde específico para você separar seus resíduos orgânicos. Semanalmente ou quinzenalmente (conforme seu plano), passamos em sua casa para realizar a coleta e troca do balde cheio por um higienizado.",
+  },
+  {
+    question: "O que posso colocar no balde de compostagem?",
+    answer:
+      "Restos de frutas, verduras, legumes, cascas de ovos, borra de café, saquinhos de chá, grãos e sementes. Evite carnes, laticínios e alimentos cozidos com muito óleo ou sal.",
+  },
+  {
+    question: "Recebo o adubo de volta?",
+    answer:
+      "Sim! Mensalmente você recebe uma cota do adubo orgânico produzido a partir dos seus resíduos para usar em suas plantas e horta. Caso não queira, doamos para hortas comunitárias parceiras.",
+  },
+  {
+    question: "Moro em apartamento, posso participar?",
+    answer:
+      "Com certeza! Nosso sistema é ideal para apartamentos, pois os baldes são vedados e não geram mau cheiro ou atraem insetos. É a solução perfeita para quem quer compostar mas não tem espaço.",
+  },
+];
 ---
 
-<BaseLayout>
-  <HeadWebsite
-    slot="head"
-    title="Composteiras residenciais | Soluções sustentáveis e-Renova"
-    description="Composteiras residenciais como solução sustentável para redução de resíduos orgânicos e apoio à economia circular."
-  />
-  <h1>Compostagem residencial como solução sustentável para resíduos orgânicos</h1>
-</BaseLayout>
+<ServiceLayout
+  title={title}
+  subtitle={subtitle}
+  description={description}
+  heroImage={compostingImg}
+  heroImageAlt="Compostagem doméstica com resíduos orgânicos"
+  faqs={faqs}
+>
+  <div slot="hero-text" class="space-y-4">
+    <p>
+      Mais de 50% do lixo que geramos em casa é orgânico. Quando enviado para
+      aterros sanitários, esse material gera gás metano, contribuindo
+      significativamente para o aquecimento global.
+    </p>
+    <p>
+      O serviço de compostagem residencial da e‑Renova fecha o ciclo do
+      alimento. Nós coletamos seus resíduos e os transformamos em adubo rico em
+      nutrientes, devolvendo vida à terra de forma simples e prática para você.
+    </p>
+  </div>
+
+  <div slot="secondary-text" class="space-y-4">
+    <p>
+      Você separa, nós transformamos. Assinando nosso serviço, você recebe um
+      kit completo para separação e nós cuidamos de toda a logística e processo
+      de compostagem.
+    </p>
+    <p>
+      Ao final de cada mês, você recebe uma recompensa: parte do composto gerado
+      para adubar suas plantas, além de relatórios sobre o impacto positivo que
+      você gerou ao não enviar lixo para o aterro.
+    </p>
+  </div>
+
+  <span slot="map-lead">
+    Confira nossa área de cobertura para coleta domiciliar. Estamos expandindo
+    constantemente para novos bairros e regiões.
+  </span>
+</ServiceLayout>

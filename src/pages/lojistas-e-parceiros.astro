@@ -1,13 +1,95 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
-import HeadWebsite from "@components/HeadWebSite.astro";
+import ServiceLayout from "@layouts/ServiceLayout.astro";
+import shopkeeperImg from "@images/shopkeeper.webp";
+
+const title = "Para lojistas e parceiros da rede";
+const subtitle = "Seja um parceiro e‑Renova";
+const description =
+  "Transforme seu estabelecimento em um ponto de coleta e atraia mais clientes.";
+
+const faqs = [
+  {
+    question: "Como meu estabelecimento pode se tornar um ponto de coleta?",
+    answer:
+      "Entre em contato conosco através do botão de WhatsApp indicando seu interesse. Nossa equipe fará uma avaliação do seu estabelecimento e fornecerá todas as instruções e o coletor adequado.",
+  },
+  {
+    question: "Preciso pagar para ser um parceiro?",
+    answer:
+      "Não. A parceria não envolve custos para o estabelecimento. Nós fornecemos o coletor e seu estabelecimento passa a estar mapeado na nossa plataforma como ponto de coleta oficial e‑Renova.",
+  },
+  {
+    question: "Quais os benefícios para meu estabelecimento?",
+    answer:
+      "Ao se tornar parceiro da e‑Renova, seu estabelecimento passa a integrar nossa plataforma, atrai um público engajado em práticas sustentáveis e fortalece o relacionamento com a comunidade. Além de contribuir para o descarte correto de resíduos eletrônicos, sua marca ganha visibilidade, gera fluxo qualificado de pessoas e se posiciona como agente de transformação socioambiental.",
+  },
+  {
+    question: "Qual a frequência de coleta?",
+    answer:
+      "A coleta é realizada sob demanda. Assim que o coletor estiver cheio, basta nos avisar que agendaremos a retirada em até 48 horas úteis.",
+  },
+  {
+    question: "Quais materiais posso receber na minha loja?",
+    answer:
+      "O parceiro define quais linhas aceita, de acordo com o espaço disponível, perfil do negócio e capacidade de armazenamento.",
+  },
+];
 ---
 
-<BaseLayout>
-  <HeadWebsite
-    slot="head"
-    title="Lojistas e parceiros | Rede de pontos de coleta e-Renova"
-    description="Seja um ponto de coleta da e-Renova. Parcerias com lojistas que desejam fortalecer sua marca com a e-Renova, gerar impacto ambiental e integrar a logística reversa."
-  />
-  <h1>Para lojistas e parceiros da rede</h1>
-</BaseLayout>
+<ServiceLayout
+  title={title}
+  subtitle={subtitle}
+  description={description}
+  heroImage={shopkeeperImg}
+  heroImageAlt="Empreendimento parceiro da e‑Renova"
+  faqs={faqs}
+>
+  <div slot="hero-text" class="space-y-4">
+    <p>
+      Torne seu negócio um agente de transformação socioambiental com a
+      e‑Renova.
+    </p>
+    <p>
+      Comércios, prestadores de serviço e pequenos negócios acumulam pequenos
+      volumes de eletrônicos ao longo do tempo. Equipamentos quebrados, trocados
+      ou devolvidos ocupam espaço, carregam riscos ambientais e podem
+      representar um risco real a integridade física.
+    </p>
+    <p>
+      Estudos mostram que negócios que adotam práticas sustentáveis crescem mais
+      rápido e consumidores têm dado preferência a empresas que demonstram
+      compromisso ambiental real. Você sabia que 47% da população se dispõe a
+      contribuir com negócios alinhados a práticas ambientalmente responsáveis?
+    </p>
+    <p>
+      A e‑Renova transforma um passivo operacional em uma oportunidade de valor
+      para o seu negócio, comprando seus resíduos eletrônicos e fortalecendo sua
+      imagem como parceiro e‑Renova impulsionando a visibilidade do seu negócio.
+    </p>
+  </div>
+
+  <div slot="secondary-text" class="space-y-4">
+    <p>
+      Ao se tornar um parceiro com a e‑Renova, você transforma seu estabelecimento
+      em um ponto de coleta oficial de resíduos eletrônicos e‑Renova.
+    </p>
+    <p>
+      Seu estabelecimento é mapeado em nossa plataforma para nossos clientes e
+      nós compramos e coletamos o excedente de eletrônicos que você acumula no
+      seu estabelecimento.
+    </p>
+    <p>
+      Essa atitude simples conecta sua marca à sustentabilidade, atrai novos
+      clientes e oferece um serviço de utilidade pública para sua comunidade.
+    </p>
+    <p>
+      Nossa proposta é simples: você ajuda o planeta, fideliza clientes e nós
+      garantimos a destinação correta dos resíduos.
+    </p>
+  </div>
+
+  <span slot="map-lead">
+    Veja quem já faz parte dessa rede. Junte-se a diversos estabelecimentos que
+    já estão fazendo a diferença em suas regiões.
+  </span>
+</ServiceLayout>
