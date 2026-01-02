@@ -1,0 +1,87 @@
+---
+import { Image } from "astro:assets";
+import recyclingTeamImg from "@images/recycling-team.webp";
+---
+
+<section class="py-16 md:py-24 bg-slate-50">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <!-- Content -->
+      <div class="space-y-12 mb-16 md:mb-24">
+        <p
+          class="text-xl md:text-2xl font-light text-slate-800 leading-relaxed"
+        >
+          Da vontade de realizar algo verdadeiramente transformador e
+          significativo, o conceito da <strong
+            class="font-semibold text-emerald-600">e‑Renova</strong
+          > nasceu da constatação de três lacunas no setor de reciclagem eletrônica
+          no Brasil:
+        </p>
+
+        <ul class="space-y-6">
+          <li class="flex items-start gap-4">
+            <span
+              class="shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-emerald-100 text-emerald-600 font-bold text-sm"
+              >1</span
+            >
+            <p class="text-slate-700 leading-relaxed">
+              O descarte de pequenos volumes de lixo eletrônico é extremamente
+              ineficiente.
+            </p>
+          </li>
+          <li class="flex items-start gap-4">
+            <span
+              class="shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-emerald-100 text-emerald-600 font-bold text-sm"
+              >2</span
+            >
+            <p class="text-slate-700 leading-relaxed">
+              Falta infraestrutura acessível, informação clara e incentivo para
+              que consumidores e empresas de pequeno e médio porte enviem seus
+              resíduos para reciclagem.
+            </p>
+          </li>
+          <li class="flex items-start gap-4">
+            <span
+              class="shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-emerald-100 text-emerald-600 font-bold text-sm"
+              >3</span
+            >
+            <p class="text-slate-700 leading-relaxed">
+              Empresas do setor carecem de visibilidade e canais de captação
+              mais amplos.
+            </p>
+          </li>
+        </ul>
+
+        <div class="pt-4">
+          <p
+            class="text-lg md:text-xl text-slate-700 leading-relaxed font-medium"
+          >
+            A <strong class="font-semibold text-emerald-600">e-renova</strong> vem
+            a preencher essas lacunas com uma solução integrada: <span
+              class="font-medium text-slate-900">operação industrial</span
+            >, <span class="font-medium text-slate-900"
+              >canal digital para vendas via logística reversa</span
+            > e <span class="font-medium text-slate-900"
+              >ecossistema completo de compliance ambiental</span
+            >, atuando como facilitadora da transição para uma economia
+            circular.
+          </p>
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+        <div
+          class="absolute inset-0 bg-linear-to-tr from-emerald-900/20 to-transparent z-10"
+        >
+        </div>
+        <Image
+          src={recyclingTeamImg}
+          alt="Equipe de reciclagem trabalhando"
+          class="w-full h-auto object-cover max-h-[600px]"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+```

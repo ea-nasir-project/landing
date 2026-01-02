@@ -1,0 +1,83 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section class="py-16 md:py-24 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Missão -->
+      <div
+        class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-emerald-200 transition-colors duration-300"
+      >
+        <div
+          class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-6 text-emerald-600"
+        >
+          <Icon name="mdi:target" class="w-6 h-6" />
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Missão</h3>
+        <p class="text-slate-600 leading-relaxed">
+          Transformar resíduos eletrônicos em oportunidades sustentáveis,
+          oferecendo soluções completas e convenientes de coleta, processamento
+          e destinação adequada de equipamentos eletrônicos de forma sustentável
+          e com responsabilidade socioambiental.
+        </p>
+      </div>
+
+      <!-- Visão -->
+      <div
+        class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-emerald-200 transition-colors duration-300"
+      >
+        <div
+          class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600"
+        >
+          <Icon name="mdi:eye-outline" class="w-6 h-6" />
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Visão</h3>
+        <p class="text-slate-600 leading-relaxed">
+          Ser a marca referência nacional em reciclagem de eletrônicos,
+          reconhecida pela excelência em sustentabilidade, economia circular e
+          responsabilidade social e ambiental, promovendo um canal facilitador e
+          conveniente para todos os perfis de geradores de resíduos eletrônicos.
+        </p>
+      </div>
+
+      <!-- Valores -->
+      <div
+        class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-emerald-200 transition-colors duration-300"
+      >
+        <div
+          class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-6 text-amber-600"
+        >
+          <Icon name="mdi:diamond-stone" class="w-6 h-6" />
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Valores</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-slate-600">
+            <span
+              class="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"
+            ></span>
+            <span>Sustentabilidade e economia circular (ambiental)</span>
+          </li>
+          <li class="flex items-start gap-3 text-slate-600">
+            <span
+              class="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"
+            ></span>
+            <span>Transparência e conformidade legal (legal)</span>
+          </li>
+          <li class="flex items-start gap-3 text-slate-600">
+            <span
+              class="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"
+            ></span>
+            <span>Integridade e responsabilidade social (social)</span>
+          </li>
+          <li class="flex items-start gap-3 text-slate-600">
+            <span
+              class="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"
+            ></span>
+            <span>Confiabilidade e conveniência (operacional)</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

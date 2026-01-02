@@ -5,13 +5,14 @@ import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
+import icon from "astro-icon";
 
 import path from 'path';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.e-renova.com.br/',
-  integrations: [mdx(), sitemap()],
+  integrations: [mdx(), sitemap(), icon()],
 
   vite: {
     plugins: [tailwindcss()],
