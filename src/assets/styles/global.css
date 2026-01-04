@@ -9,16 +9,40 @@
 @layer base {
   body {
     font-family: var(--font-barlow);
+    @apply text-slate-800 bg-emerald-50;
   }
 
-  /* Sections */
-  section {
-    @apply py-16 md:py-24;
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-bold text-sky-950;
   }
 
-  /* Headings */
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4 md:px-8 lg:px-16;
+  }
+
+  .section {
+    @apply py-8 md:py-12;
+  }
+
+  .section-content {
+    @apply py-10 md:py-16;
+  }
+
+  .section-highlight {
+    @apply py-14 md:py-20;
+  }
+
   .heading-1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-sky-950 font-barlow-condensed;
+    @apply text-4xl md:text-5xl lg:text-6xl mb-6 font-barlow-condensed;
   }
 
   .heading-2 {
@@ -28,10 +52,15 @@
   .heading-3 {
     @apply text-2xl md:text-3xl lg:text-4xl font-bold mb-3
   }
+
+  .lead {
+    @apply text-lg md:text-xl text-slate-600 max-w-3xl;
+  }
 }
 
+
 @layer utilities {
-  .container {
-    @apply px-4 md:px-8 lg:px-16;
+  .text-balance {
+    text-wrap: balance;
   }
 }
