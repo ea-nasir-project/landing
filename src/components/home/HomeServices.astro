@@ -1,5 +1,5 @@
 ---
-import HomeProductsFeature from "@components/ui/HomeProductsFeature.astro";
+import HomeServicesFeature from "@components/home/HomeServicesFeature.astro";
 
 // Images
 import individualImg from "@images/individual.webp";
@@ -18,7 +18,7 @@ import compostingImg from "@images/composting1.webp";
 
     <div class="space-y-24 lg:space-y-32">
       <!-- 1. Descarte voluntário (Odd: Text Left, Image Right) -->
-      <HomeProductsFeature
+      <HomeServicesFeature
         title="Descarte voluntário nos pontos de coleta"
         description="Para quem quer descartar seus eletrônicos de forma segura nos pontos de coleta parceiros. Encontre o local mais próximo e faça sua parte pelo meio ambiente de forma gratuita e responsável."
         image={individualImg}
@@ -26,7 +26,7 @@ import compostingImg from "@images/composting1.webp";
       />
 
       <!-- 2. Lojistas e parceiros (Even: Image Left, Text Right) -->
-      <HomeProductsFeature
+      <HomeServicesFeature
         title="Lojistas e parceiros"
         description="Para quem quer enviar remessas pela plataforma e transformar eletrônicos parados em valor. Torne-se um parceiro de coleta e gere receita extra enquanto atrai fluxo de clientes conscientes para seu negócio."
         image={shopkeeperImg}
@@ -35,7 +35,7 @@ import compostingImg from "@images/composting1.webp";
       />
 
       <!-- 3. Soluções para grandes volumes (Odd: Text Left, Image Right) -->
-      <HomeProductsFeature
+      <HomeServicesFeature
         title="Soluções para grandes volumes"
         description="Para empresas, indústrias e organizações que precisam de logística reversa estruturada e coleta em volume. Oferecemos certificação de destruição de dados e relatórios de impacto ambiental completos."
         image={companiesImg}
@@ -43,7 +43,7 @@ import compostingImg from "@images/composting1.webp";
       />
 
       <!-- 4. Instalação de composteiras residenciais (Even: Image Left, Text Right) -->
-      <HomeProductsFeature
+      <HomeServicesFeature
         title="Instalação de composteiras residenciais"
         description="Para quem deseja adotar práticas sustentáveis no dia a dia. Transforme resíduos orgânicos em adubo em sua própria casa com nosso suporte completo e kits personalizados."
         image={compostingImg}

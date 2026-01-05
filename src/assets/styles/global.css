@@ -29,20 +29,26 @@
     @apply mx-auto px-4 md:px-8 lg:px-16;
   }
 
+  /* Sections */
   .section {
     @apply py-8 md:py-12;
   }
 
-  .section-content {
-    @apply py-10 md:py-16;
-  }
-
-  .section-highlight {
+  .section-intro {
     @apply py-14 md:py-20;
   }
 
+  /* Section structure */
+  .section-title {
+    @apply max-w-4xl mx-auto text-center mb-12 md:mb-16;
+  }
+
+  .section-content {
+    @apply mt-8 md:mt-12;
+  }
+
   .heading-1 {
-    @apply text-4xl md:text-5xl lg:text-6xl mb-6 font-barlow-condensed;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold mb-5 font-barlow-condensed;
   }
 
   .heading-2 {
@@ -54,13 +60,13 @@
   }
 
   .lead {
-    @apply text-lg md:text-xl text-slate-600 max-w-3xl;
+    @apply text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl;
   }
 }
 
 
-@layer utilities {
+/* @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-}
+} */

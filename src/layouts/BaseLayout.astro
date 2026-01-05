@@ -19,7 +19,7 @@ const isHome = pathname === "/";
   </head>
   <body>
     <Header position={headerPosition} />
-    <main>
+    <main class="pb-6 md:pb-8">
       {!isHome && <Breadcrumb />}
       <slot />
     </main>
