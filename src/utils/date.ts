@@ -6,5 +6,6 @@ export const getFormattedDate = (date: string | Date) => {
     year: "numeric",
     month: "long",
     day: "numeric",
+    timeZone: "UTC",
   });
 };
