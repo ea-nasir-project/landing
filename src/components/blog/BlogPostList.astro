@@ -17,12 +17,39 @@ const category = categories.find(
 // Fallback for author and category if not found
 const safeAuthor = author || authors[0];
 const safeCategory = category || categories[0];
+
+const categoryColors = {
+  green: {
+    text: "text-emerald-900",
+    underline:
+      "bg-linear-to-r from-emerald-200 to-emerald-100",
+  },
+  blue: {
+    text: "text-blue-900",
+    underline:
+      "bg-linear-to-r from-blue-200 to-blue-100",
+  },
+  yellow: {
+    text: "text-yellow-900",
+    underline:
+      "bg-linear-to-r from-yellow-200 to-yellow-100",
+  },
+  purple: {
+    text: "text-purple-900",
+    underline:
+      "bg-linear-to-r from-purple-200 to-purple-100",
+  },
+};
+
+const activeCategoryColor =
+  categoryColors[safeCategory.color as keyof typeof categoryColors] ||
+  categoryColors.green;
 ---
 
 <div class="cursor-pointer group">
   <div
     class:list={[
-      "relative overflow-hidden transition-all bg-gray-100 rounded-md dark:bg-gray-800 hover:scale-105",
+      "relative overflow-hidden transition-all bg-gray-100 rounded-md hover:scale-105",
       aspect === "landscape" ? "aspect-video" : "aspect-square",
     ]}
   >
@@ -46,15 +73,23 @@ const safeCategory = category || categories[0];
     </a>
   </div>
 
-  <a href="#">
-    <Label theme={safeCategory.color}>{safeCategory.title}</Label>
-  </a>
+  <div class="mt-2">
+    <a href="#">
+      <Label theme={safeCategory.color}>{safeCategory.title}</Label>
+    </a>
+  </div>
   <h2
-    class="mt-2 text-lg font-semibold tracking-normal text-brand-primary dark:text-white"
+    class:list={[
+      "mt-2 text-lg font-semibold tracking-normal transition-colors",
+      activeCategoryColor.text,
+    ]}
   >
     <a href={"/blog/" + post.id}>
       <span
-        class="bg-linear-to-r from-green-200 to-green-100 dark:from-purple-800 dark:to-purple-900 bg-size-[0px_10px] bg-bottom-left bg-no-repeat transition-[background-size] duration-500 hover:bg-size-[100%_3px] group-hover:bg-size-[100%_10px]"
+        class:list={[
+          "bg-bottom-left bg-no-repeat transition-[background-size] duration-500 hover:bg-size-[100%_3px] group-hover:bg-size-[100%_10px] bg-size-[0px_10px]",
+          activeCategoryColor.underline,
+        ]}
       >
         {post.data.title}
       </span>
@@ -64,7 +99,7 @@ const safeCategory = category || categories[0];
   <div class="hidden">
     {
       post.data.description && (
-        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 line-clamp-3">
+        <p class="mt-2 text-sm text-gray-500 line-clamp-3">
           <a href={"/blog/" + post.id}>{post.data.description}</a>
         </p>
       )
@@ -72,7 +107,7 @@ const safeCategory = category || categories[0];
   </div>
 
   <div
-    class="flex items-center mt-3 space-x-3 text-gray-500 dark:text-gray-400"
+    class="flex items-center mt-3 space-x-3 text-gray-500"
   >
     <div class="flex items-center gap-3">
       <div class="relative shrink-0 w-5 h-5">
@@ -91,7 +126,7 @@ const safeCategory = category || categories[0];
       </div>
       <span class="text-sm">{safeAuthor.name}</span>
     </div>
-    <span class="text-xs text-gray-300 dark:text-gray-600"> &bull;</span>
+    <span class="text-xs text-gray-300"> &bull;</span>
     <time class="text-sm" datetime={post.data.pubDate.toISOString()}>
       {getFormattedDate(post.data.pubDate)}
     </time>

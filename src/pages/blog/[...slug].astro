@@ -34,6 +34,17 @@ const category = categories.find(
 const safeAuthor = author || authors[0];
 const safeCategory = category || categories[0];
 const safeImage = post.data.heroImage;
+
+const titleColors = {
+  green: "text-emerald-900",
+  blue: "text-blue-900",
+  yellow: "text-yellow-900",
+  purple: "text-purple-900",
+};
+
+const activeTitleColor =
+  titleColors[safeCategory.color as keyof typeof titleColors] ||
+  titleColors.green;
 ---
 
 <BaseLayout>
@@ -53,7 +64,10 @@ const safeImage = post.data.heroImage;
       </div>
 
       <h1
-        class="mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white"
+        class:list={[
+          "mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug lg:text-4xl",
+          activeTitleColor,
+        ]}
       >
         {post.data.title}
       </h1>
@@ -76,12 +90,12 @@ const safeImage = post.data.heroImage;
           </div>
 
           <div>
-            <p class="text-gray-800 dark:text-gray-400">
+            <p class="text-gray-800">
               {safeAuthor.name}
             </p>
             <div class="flex items-center space-x-2 text-sm">
               <time
-                class="text-gray-500 dark:text-gray-400"
+                class="text-gray-500"
                 datetime={post.data.pubDate.toISOString()}
               >
                 {getFormattedDate(post.data.pubDate)}
@@ -113,7 +127,7 @@ const safeImage = post.data.heroImage;
   <div class="container px-4 py-8 xl:px-5">
     <article class="max-w-5xl mx-auto">
       <div
-        class="mx-auto my-3 prose prose-base dark:prose-invert prose-a:text-blue-600 max-w-none"
+        class="mx-auto my-3 max-w-none"
       >
         <Content />
 
@@ -129,7 +143,7 @@ const safeImage = post.data.heroImage;
       <div class="flex justify-center mt-7 mb-7">
         <a
           href="/blog"
-          class="px-5 py-3 text-sm text-blue-600 transition rounded-md dark:bg-gray-700 dark:text-white bg-blue-50 hover:bg-blue-100"
+          class="px-5 py-3 text-sm text-blue-600 transition rounded-md bg-blue-100 hover:bg-blue-200"
         >
           ← Ver todos os artigos
         </a>

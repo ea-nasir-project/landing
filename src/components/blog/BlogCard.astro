@@ -2,13 +2,34 @@
 import { Image } from "astro:assets";
 import { getFormattedDate } from "@utils/date";
 import type { CollectionEntry } from "astro:content";
+import { categories } from "@data/category";
+import Label from "./BlogLabel.astro";
 
 interface Props {
   post: CollectionEntry<"blog">;
 }
 
 const { post } = Astro.props;
-const { title, description, pubDate, heroImage } = post.data;
+const {
+  title,
+  description,
+  pubDate,
+  heroImage,
+  category: categorySlug,
+} = post.data;
+
+const category =
+  categories.find((c) => c.slug === categorySlug) || categories[0];
+
+const hoverColors = {
+  green: "group-hover:text-emerald-700",
+  blue: "group-hover:text-blue-600",
+  yellow: "group-hover:text-yellow-700",
+  purple: "group-hover:text-purple-600",
+};
+
+const activeHoverColor =
+  hoverColors[category.color as keyof typeof hoverColors] || hoverColors.green;
 ---
 
 <a
@@ -27,13 +48,17 @@ const { title, description, pubDate, heroImage } = post.data;
     }
   </div>
   <div class="p-6">
-    <div class="mb-2 text-sm text-gray-500">
-      <time datetime={pubDate.toISOString()}>
+    <div class="mb-2 flex items-center justify-between">
+      <time class="text-sm text-gray-500" datetime={pubDate.toISOString()}>
         {getFormattedDate(pubDate)}
       </time>
+      <Label theme={category.color}>{category.title}</Label>
     </div>
     <h3
-      class="mb-3 text-xl font-bold text-gray-900 group-hover:text-primary transition-colors"
+      class:list={[
+        "mb-3 text-xl font-bold text-gray-900 transition-colors",
+        activeHoverColor,
+      ]}
     >
       {title}
     </h3>
