@@ -1,0 +1,140 @@
+---
+import { getCollection, render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { Image, Picture } from "astro:assets";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import HeadArticle from "@components/HeadArticle.astro";
+import Label from "@components/blog/BlogLabel.astro";
+import AuthorCard from "@components/blog/BlogAuthorCard.astro";
+import { authors, type Author } from "@data/authors.ts";
+import { categories, type Category } from "@data/category.ts";
+import { getFormattedDate } from "@utils/date.ts";
+
+export async function getStaticPaths() {
+  const blog = await getCollection("blog");
+  return blog.map((post: CollectionEntry<"blog">) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+type Props = {
+  post: CollectionEntry<"blog">;
+};
+
+const { post } = Astro.props as Props;
+const { Content } = await render(post);
+
+const author = authors.find((item) => item.slug === post.data.author) as Author;
+const category = categories.find(
+  (item) => item.slug === post.data.category,
+) as Category;
+
+// Fallback safety
+const safeAuthor = author || authors[0];
+const safeCategory = category || categories[0];
+const safeImage = post.data.heroImage;
+---
+
+<BaseLayout>
+  <HeadArticle
+    slot="head"
+    title={post.data.title}
+    description={post.data.description}
+    image={safeImage}
+    publishedTime={post.data.pubDate.toISOString()}
+    author={safeAuthor.name}
+  />
+
+  <div class="container px-4 py-8 xl:px-5">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center">
+        <Label theme={safeCategory.color}>{safeCategory.title}</Label>
+      </div>
+
+      <h1
+        class="mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white"
+      >
+        {post.data.title}
+      </h1>
+
+      <div class="flex justify-center mt-3 space-x-3 text-gray-500">
+        <div class="flex items-center gap-3">
+          <div class="relative shrink-0 w-10 h-10">
+            {
+              safeAuthor.image && (
+                <Image
+                  src={safeAuthor.image}
+                  alt={safeAuthor.name}
+                  width={80}
+                  height={80}
+                  loading="eager"
+                  class="rounded-full object-cover w-full h-full"
+                />
+              )
+            }
+          </div>
+
+          <div>
+            <p class="text-gray-800 dark:text-gray-400">
+              {safeAuthor.name}
+            </p>
+            <div class="flex items-center space-x-2 text-sm">
+              <time
+                class="text-gray-500 dark:text-gray-400"
+                datetime={post.data.pubDate.toISOString()}
+              >
+                {getFormattedDate(post.data.pubDate)}
+              </time>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="relative z-0 max-w-5xl mx-auto overflow-hidden lg:rounded-lg aspect-video"
+  >
+    {
+      safeImage && (
+        <Picture
+          src={safeImage}
+          widths={[200, 400, 800]}
+          sizes="(max-width: 640px) 90vw, 480px"
+          alt={post.data.title}
+          loading="eager"
+          class="w-full h-full object-cover"
+        />
+      )
+    }
+  </div>
+
+  <div class="container px-4 py-8 xl:px-5">
+    <article class="max-w-5xl mx-auto">
+      <div
+        class="mx-auto my-3 prose prose-base dark:prose-invert prose-a:text-blue-600 max-w-none"
+      >
+        <Content />
+
+        <div class="flex flex-wrap items-center w-full gap-3 md:w-auto mt-8">
+          {
+            post.data.tags?.map((tag: string) => (
+              <span class="text-sm text-gray-500">#{tag}</span>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="flex justify-center mt-7 mb-7">
+        <a
+          href="/blog"
+          class="px-5 py-3 text-sm text-blue-600 transition rounded-md dark:bg-gray-700 dark:text-white bg-blue-50 hover:bg-blue-100"
+        >
+          ← Ver todos os artigos
+        </a>
+      </div>
+      {safeAuthor && <AuthorCard author={safeAuthor} />}
+    </article>
+  </div>
+</BaseLayout>

@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const { title, description, pubDate, heroImage } = post.data;
+---
+
+<a
+  href={`/blog/${post.id}/`}
+  class="group block overflow-hidden rounded-lg bg-white shadow-md transition-all hover:shadow-xl hover:-translate-y-1"
+>
+  <div class="relative h-48 overflow-hidden">
+    {
+      heroImage && (
+        <Image
+          src={heroImage}
+          alt={title}
+          class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+      )
+    }
+  </div>
+  <div class="p-6">
+    <div class="mb-2 text-sm text-gray-500">
+      <time datetime={pubDate.toISOString()}>
+        {
+          pubDate.toLocaleDateString("pt-BR", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })
+        }
+      </time>
+    </div>
+    <h3
+      class="mb-3 text-xl font-bold text-gray-900 group-hover:text-primary transition-colors"
+    >
+      {title}
+    </h3>
+    <p class="text-gray-600 line-clamp-3">
+      {description}
+    </p>
+  </div>
+</a>

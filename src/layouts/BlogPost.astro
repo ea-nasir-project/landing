@@ -1,0 +1,65 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "./BaseLayout.astro";
+import HeadArticle from "@components/HeadArticle.astro";
+import { Image } from "astro:assets";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+
+import defaultImage from "@assets/images/hero.webp";
+---
+
+<BaseLayout>
+  <HeadArticle
+    slot="head"
+    title={title}
+    description={description}
+    image={heroImage || defaultImage}
+    publishedTime={pubDate.toISOString()}
+    author="e-Renova"
+  />
+  <article class="container mx-auto px-4 py-8 max-w-4xl">
+    <div class="mb-8 text-center">
+      {
+        heroImage && (
+          <Image
+            src={heroImage}
+            alt={title}
+            class="w-full h-auto max-h-[500px] object-cover rounded-lg mb-6 shadow-lg"
+          />
+        )
+      }
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{title}</h1>
+      <div class="text-gray-600">
+        <time datetime={pubDate.toISOString()}>
+          {
+            pubDate.toLocaleDateString("pt-BR", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          }
+        </time>
+        {
+          updatedDate && (
+            <div class="italic text-sm mt-1">
+              Atualizado em{" "}
+              <time datetime={updatedDate.toISOString()}>
+                {updatedDate.toLocaleDateString("pt-BR", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </time>
+            </div>
+          )
+        }
+      </div>
+    </div>
+    <div class="prose prose-lg prose-green mx-auto max-w-none text-justify">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

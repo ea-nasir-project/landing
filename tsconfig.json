@@ -30,6 +30,12 @@
       ],
       "@styles/*": [
         "src/assets/styles/*"
+      ],
+      "@data/*": [
+        "src/data/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
       ]
     }
   }

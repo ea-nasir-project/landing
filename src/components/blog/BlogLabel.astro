@@ -1,0 +1,23 @@
+---
+const { theme = "green" } = Astro.props;
+
+const color = {
+  green: "text-emerald-700 bg-emerald-100",
+  blue: "text-blue-600 bg-blue-100",
+  yellow: "text-yellow-700 bg-yellow-50",
+  purple: "text-purple-600 bg-purple-50",
+  pink: "text-pink-600 bg-pink-50",
+};
+
+// Default to green if theme not found
+const activeColor = color[theme as keyof typeof color] || color["green"];
+---
+
+<span
+  class:list={[
+    "inline-block py-1 px-3 rounded-full text-xs font-medium tracking-wider uppercase",
+    activeColor,
+  ]}
+>
+  <slot />
+</span>

@@ -18,6 +18,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
     resolve: {
       alias: {
+        '@': path.resolve('./src'),
         '@components': path.resolve('./src/components'),
         '@layouts': path.resolve('./src/layouts'),
         '@pages': path.resolve('./src/pages'),
@@ -25,6 +26,8 @@ export default defineConfig({
         '@styles': path.resolve('./src/assets/styles'),
         '@images': path.resolve('./src/assets/images'),
         '@icons': path.resolve('./src/assets/icons'),
+        '@data': path.resolve('./src/data'),
+        '@utils': path.resolve('./src/utils'),
       },
     },
   },

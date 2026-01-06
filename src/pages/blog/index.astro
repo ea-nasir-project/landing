@@ -1,0 +1,43 @@
+---
+import PostList from "@components/blog/BlogPostList.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import HeadWebsite from "@components/HeadWebSite.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+const allPosts = await getCollection("blog");
+type BlogPost = CollectionEntry<"blog">;
+const posts = allPosts
+  .filter((post: BlogPost) => !post.data.draft)
+  .sort(
+    (a: BlogPost, b: BlogPost) =>
+      b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  );
+---
+
+<BaseLayout>
+  <HeadWebsite
+    slot="head"
+    title="Blog e-Renova | Reciclagem, sustentabilidade e logística reversa"
+    description="Conteúdos sobre reciclagem de eletrônicos, logística reversa, sustentabilidade e economia circular."
+  />
+
+  <div class="container px-4 py-8 xl:px-5">
+    <div class="grid gap-10 lg:gap-10 md:grid-cols-2">
+      {
+        posts
+          .slice(0, 2)
+          .map((post: BlogPost) => (
+            <PostList post={post} aspect="landscape" preloadImage={true} />
+          ))
+      }
+    </div>
+    <div class="grid gap-10 mt-10 lg:gap-10 md:grid-cols-2 xl:grid-cols-3">
+      {
+        posts
+          .slice(2)
+          .map((post: BlogPost) => <PostList post={post} aspect="square" />)
+      }
+    </div>
+  </div>
+</BaseLayout>
