@@ -22,6 +22,7 @@
     "@astrojs/rss": "^4.0.14",
     "@astrojs/sitemap": "^3.6.0",
     "@iconify-json/mdi": "^1.2.3",
+    "@tailwindcss/typography": "^0.5.19",
     "@types/leaflet": "^1",
     "typescript": "^5.9.3"
   },

@@ -111,7 +111,7 @@ Esse tipo de equipamento tem regras próprias, muitas vezes ligadas à seguranç
 
 Pra um produto ser considerado resíduo eletrônico, não basta só “usar energia”. Precisa ter chegado até você como um produto elétrico ou eletrônico pronto para uso. O resto? Tem outro caminho e saber a diferença é o primeiro passo para um descarte consciente.
 
-E aí, identificou algum item dessas linhas aí na sua casa? Agora que você já sabe que isso tem valor e perigo em potencial, que tal descobrir** onde tem um ponto de coleta perto de você**? No próximo artigo, a gente te ensina exatamente como e onde descartar cada tipo.
+E aí, identificou algum item dessas linhas aí na sua casa? Agora que você já sabe que isso tem valor e perigo em potencial, que tal descobrir onde tem um ponto de coleta perto de você? No próximo artigo, a gente te ensina exatamente como e onde descartar cada tipo.
 
 # Referências
 
