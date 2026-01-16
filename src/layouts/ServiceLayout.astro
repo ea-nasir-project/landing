@@ -30,21 +30,37 @@ const colorMapVariants = {
     outline: "outline-emerald-500",
     h1: "text-emerald-950",
     h2: "text-emerald-900",
+    mapBg: "bg-emerald-100",
+    mapTitle: "text-emerald-800",
+    mapBorder: "border-emerald-100",
+    mapIndicator: "border-emerald-200",
   },
   purple: {
     outline: "outline-purple-500",
     h1: "text-purple-950",
     h2: "text-purple-900",
+    mapBg: "bg-purple-100",
+    mapTitle: "text-purple-800",
+    mapBorder: "border-purple-100",
+    mapIndicator: "border-purple-200",
   },
   cyan: {
     outline: "outline-cyan-500",
     h1: "text-cyan-950",
     h2: "text-cyan-900",
+    mapBg: "bg-cyan-100",
+    mapTitle: "text-cyan-800",
+    mapBorder: "border-cyan-100",
+    mapIndicator: "border-cyan-200",
   },
   amber: {
     outline: "outline-amber-500",
     h1: "text-amber-950",
     h2: "text-amber-900",
+    mapBg: "bg-amber-100",
+    mapTitle: "text-amber-800",
+    mapBorder: "border-amber-100",
+    mapIndicator: "border-amber-200",
   },
 } satisfies Record<Props["color"], Record<string, string>>;
 
@@ -52,7 +68,7 @@ const theme = colorMapVariants[color];
 const outlineClass = `outline-4 outline-offset-4 ${theme.outline}`;
 ---
 
-<BaseLayout>
+<BaseLayout color={color}>
   <HeadWebsite
     slot="head"
     title={`${title} | e‑Renova`}
@@ -91,15 +107,15 @@ const outlineClass = `outline-4 outline-offset-4 ${theme.outline}`;
       </div>
     </section>
 
-    <section class="bg-emerald-50 rounded-3xl p-8 lg:p-12">
+    <section class={`${theme.mapBg} rounded-3xl p-4`}>
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
         <div
-          class="lg:col-span-2 rounded-2xl overflow-hidden shadow-lg border border-emerald-100"
+          class={`lg:col-span-2 rounded-2xl overflow-hidden shadow-lg border ${theme.mapBorder}`}
         >
           <Map />
         </div>
         <div class="space-y-6">
-          <h3 class="heading-3 text-emerald-800">
+          <h3 class={`heading-3 ${theme.mapTitle}`}>
             Encontre os parceiros e‑Renova
           </h3>
           <p class="text-gray-700 leading-relaxed">
@@ -109,7 +125,7 @@ const outlineClass = `outline-4 outline-offset-4 ${theme.outline}`;
             </slot>
           </p>
 
-          <div class="space-y-4 pt-4 border-t border-emerald-200">
+          <div class={`space-y-4 pt-4 border-t ${theme.mapIndicator}`}>
             <div class="flex items-start gap-3">
               <span
                 class="mt-1 flex h-3 w-3 shrink-0 rounded-full bg-green-500 outline-2 outline-gray-300"

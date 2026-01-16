@@ -3,18 +3,37 @@ import type { BreadcrumbItem } from "@/utils/breadcrumbs";
 
 interface Props {
   breadcrumbs: BreadcrumbItem[];
+  color?: "emerald" | "purple" | "cyan" | "amber";
 }
 
-const { breadcrumbs } = Astro.props;
+const { breadcrumbs, color = "emerald" } = Astro.props;
+
+const colorMap = {
+  emerald: {
+    hover: "hover:text-emerald-600",
+    last: "text-emerald-800",
+  },
+  purple: {
+    hover: "hover:text-purple-600",
+    last: "text-purple-800",
+  },
+  cyan: {
+    hover: "hover:text-cyan-600",
+    last: "text-cyan-800",
+  },
+  amber: {
+    hover: "hover:text-amber-600",
+    last: "text-amber-800",
+  },
+};
+
+const theme = colorMap[color];
 ---
 
 <nav aria-label="Breadcrumb" class="container mx-auto px-4 md:px-8 py-4">
   <ol role="list" class="flex items-center space-x-2 text-sm text-gray-500">
     <li>
-      <a
-        href="/"
-        class="flex items-center hover:text-emerald-600 transition-colors"
-      >
+      <a href="/" class={`flex items-center transition-colors ${theme.hover}`}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
@@ -48,14 +67,11 @@ const { breadcrumbs } = Astro.props;
             />
           </svg>
           {crumb.isLast ? (
-            <span class="ml-2 font-medium text-emerald-800" aria-current="page">
+            <span class={`ml-2 font-medium ${theme.last}`} aria-current="page">
               {crumb.label}
             </span>
           ) : (
-            <a
-              href={crumb.href}
-              class="ml-2 font-medium hover:text-emerald-600"
-            >
+            <a href={crumb.href} class={`ml-2 font-medium ${theme.hover}`}>
               {crumb.label}
             </a>
           )}

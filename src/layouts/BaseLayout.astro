@@ -7,13 +7,21 @@ import { resolveBreadcrumbs } from "@/utils/breadcrumbs.ts";
 
 interface Props {
   headerPosition?: "absolute" | "sticky";
+  color?: "emerald" | "purple" | "cyan" | "amber";
 }
 
-const { headerPosition = "sticky" } = Astro.props;
+const { headerPosition = "sticky", color = "emerald" } = Astro.props;
 
 const isHome = Astro.url.pathname === "/";
 
 const breadcrumbs = resolveBreadcrumbs(Astro.url.pathname);
+
+const bgMap = {
+  emerald: "bg-emerald-50",
+  purple: "bg-purple-50",
+  cyan: "bg-cyan-50",
+  amber: "bg-amber-50",
+};
 ---
 
 <!doctype html>
@@ -21,10 +29,10 @@ const breadcrumbs = resolveBreadcrumbs(Astro.url.pathname);
   <head>
     <slot name="head" />
   </head>
-  <body>
+  <body class={!isHome ? bgMap[color] : ""}>
     <Header position={headerPosition} />
     <main class="pb-6 md:pb-8">
-      {!isHome && <Breadcrumb breadcrumbs={breadcrumbs} />}
+      {!isHome && <Breadcrumb breadcrumbs={breadcrumbs} color={color} />}
       <slot />
     </main>
     <Footer />
