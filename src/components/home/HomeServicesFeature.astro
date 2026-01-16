@@ -8,9 +8,44 @@ interface Props {
   image: ImageMetadata;
   href: string;
   reversed?: boolean;
+  color: "emerald" | "purple" | "cyan" | "amber";
 }
 
-const { title, description, image, href, reversed = false } = Astro.props;
+const {
+  title,
+  description,
+  image,
+  href,
+  reversed = false,
+  color,
+} = Astro.props;
+
+const colorMapVariants = {
+  emerald: {
+    outline: "outline-emerald-500",
+    title: "text-emerald-900 hover:text-emerald-700 transition-colors",
+    text: "text-emerald-600 hover:text-emerald-700 transition-colors",
+  },
+  purple: {
+    outline: "outline-purple-500",
+    title: "text-purple-900 hover:text-purple-700 transition-colors",
+    text: "text-purple-600 hover:text-purple-700 transition-colors",
+  },
+  cyan: {
+    outline: "outline-cyan-500",
+    title: "text-cyan-900 hover:text-cyan-700 transition-colors",
+    text: "text-cyan-600 hover:text-cyan-700 transition-colors",
+  },
+  amber: {
+    outline: "outline-amber-500",
+    title: "text-amber-900 hover:text-amber-700 transition-colors",
+    text: "text-amber-600 hover:text-amber-700 transition-colors",
+  },
+} satisfies Record<Props["color"], Record<string, string>>;
+
+const outlineClass = `outline-4 outline-offset-4 ${colorMapVariants[color].outline}`;
+const linkTextClass = `font-semibold ${colorMapVariants[color].text}`;
+const titleClass = `heading-3 ${colorMapVariants[color].title}`;
 ---
 
 <div
@@ -18,18 +53,15 @@ const { title, description, image, href, reversed = false } = Astro.props;
 >
   <!-- Text Content -->
   <div class="flex-1 space-y-6">
-    <h3 class="heading-3 text-emerald-900">
+    <h3 class={titleClass}>
       {title}
     </h3>
     <p class="text-lg text-gray-700 leading-relaxed">
       {description}
     </p>
     <div>
-      <a
-        href={href}
-        class="group inline-flex items-center text-emerald-600 font-semibold hover:text-emerald-700 transition-colors"
-      >
-        Saiba mais
+      <a href={href} class={`group inline-flex items-center ${linkTextClass}`}>
+        <span>Saiba mais</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-5 w-5 ml-2 transform transition-transform group-hover:translate-x-1"
@@ -50,7 +82,7 @@ const { title, description, image, href, reversed = false } = Astro.props;
   <!-- Image Content -->
   <div class="flex-1 w-full relative">
     <div
-      class="relative rounded-3xl overflow-hidden aspect-square shadow-xl group max-w-[480px] mx-auto"
+      class={`relative rounded-3xl overflow-hidden aspect-square shadow-xl group max-w-[480px] mx-auto ${outlineClass}`}
     >
       <div
         class="absolute inset-0 bg-emerald-900/10 group-hover:bg-transparent transition-colors duration-500 z-10"
