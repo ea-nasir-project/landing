@@ -4,21 +4,51 @@ interface Props {
     question: string;
     answer: string;
   }[];
+  color?: "emerald" | "purple" | "cyan" | "amber";
 }
 
-const { items } = Astro.props;
+const { items, color = "emerald" } = Astro.props;
+
+const colorMap = {
+  emerald: {
+    details: "border-emerald-100 hover:border-emerald-200",
+    summary: "text-emerald-900 group-hover:text-emerald-700",
+    icon: "bg-emerald-50 text-emerald-600 group-open:bg-emerald-100",
+  },
+  purple: {
+    details: "border-purple-100 hover:border-purple-200",
+    summary: "text-purple-900 group-hover:text-purple-700",
+    icon: "bg-purple-50 text-purple-600 group-open:bg-purple-100",
+  },
+  cyan: {
+    details: "border-cyan-100 hover:border-cyan-200",
+    summary: "text-cyan-900 group-hover:text-cyan-700",
+    icon: "bg-cyan-50 text-cyan-600 group-open:bg-cyan-100",
+  },
+  amber: {
+    details: "border-amber-100 hover:border-amber-200",
+    summary: "text-amber-900 group-hover:text-amber-700",
+    icon: "bg-amber-50 text-amber-600 group-open:bg-amber-100",
+  },
+};
+
+const theme = colorMap[color];
 ---
 
 <div class="w-full space-y-4">
   {
     items.map((item) => (
-      <details class="group border border-emerald-100 rounded-2xl bg-white overflow-hidden transition-all duration-300 open:shadow-md hover:border-emerald-200">
+      <details
+        class={`group border rounded-2xl bg-white overflow-hidden transition-all duration-300 open:shadow-md ${theme.details}`}
+      >
         <summary class="flex cursor-pointer items-center justify-between gap-4 p-6 list-none [&::-webkit-details-marker]:hidden">
-          <h3 class="text-lg font-medium text-emerald-900 group-hover:text-emerald-700 transition-colors">
+          <h3 class={`text-lg font-medium transition-colors ${theme.summary}`}>
             {item.question}
           </h3>
 
-          <span class="shrink-0 rounded-full bg-emerald-50 p-2 text-emerald-600 transition-all duration-300 group-open:bg-emerald-100 group-open:rotate-180">
+          <span
+            class={`shrink-0 rounded-full p-2 transition-all duration-300 group-open:rotate-180 ${theme.icon}`}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="size-5"
