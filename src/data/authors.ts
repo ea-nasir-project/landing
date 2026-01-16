@@ -1,12 +1,12 @@
-import pedroImg from "../assets/images/authors/pedro.webp";
-import alexandreImg from "../assets/images/authors/alexandre.webp";
-import elianaImg from "../assets/images/authors/eliana.webp";
+import pedroImg from "@/images/authors/pedro.webp";
+import alexandreImg from "@/images/authors/alexandre.webp";
+import elianaImg from "@/images/authors/eliana.webp";
 
 export interface Author {
   name: string;
   slug: string;
   image: ImageMetadata;
-  bio: string;
+  bio: string;  
 }
 
 export const authors: Author[] = [

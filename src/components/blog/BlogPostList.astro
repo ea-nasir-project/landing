@@ -1,11 +1,11 @@
 ---
 import { Image } from "astro:assets";
 import Label from "./BlogLabel.astro";
-import type { Author } from "@data/authors";
-import { authors } from "@data/authors";
-import type { Category } from "@data/category";
-import { categories } from "@data/category";
-import { getFormattedDate } from "@utils/date";
+import type { Author } from "@/data/authors";
+import { authors } from "@/data/authors";
+import type { Category } from "@/data/category";
+import { categories } from "@/data/category";
+import { getFormattedDate } from "@/utils/date";
 import { Icon } from "astro-icon/components";
 
 const { post, aspect, preloadImage } = Astro.props;

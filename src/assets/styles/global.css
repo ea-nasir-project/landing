@@ -66,8 +66,42 @@
 }
 
 
-/* @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(to right,
+        var(--gradient-from),
+        var(--gradient-to));
   }
-} */
+
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-up-delay {
+    animation: fadeUp 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .gradient-teal {
+    --gradient-from: theme(colors.teal.500);
+    --gradient-to: theme(colors.teal.300);
+  }
+
+  .gradient-sky {
+    --gradient-from: theme(colors.sky.500);
+    --gradient-to: theme(colors.sky.300);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

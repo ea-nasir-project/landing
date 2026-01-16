@@ -10,32 +10,20 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*": [
-        "src/components/*"
+      "@/*": [
+        "src/*"
       ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@images/*": [
+      "@/images/*": [
         "src/assets/images/*"
       ],
-      "@icons/*": [
+      "@/icons/*": [
         "src/assets/icons/*"
       ],
-      "@pages/*": [
-        "src/pages/*"
-      ],
-      "@scripts/*": [
+      "@/scripts/*": [
         "src/assets/scripts/*"
       ],
-      "@styles/*": [
+      "@/styles/*": [
         "src/assets/styles/*"
-      ],
-      "@data/*": [
-        "src/data/*"
-      ],
-      "@utils/*": [
-        "src/utils/*"
       ]
     }
   }

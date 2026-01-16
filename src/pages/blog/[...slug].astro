@@ -2,13 +2,13 @@
 import { getCollection, render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { Image, Picture } from "astro:assets";
-import BaseLayout from "@layouts/BaseLayout.astro";
-import HeadArticle from "@components/HeadArticle.astro";
-import Label from "@components/blog/BlogLabel.astro";
-import AuthorCard from "@components/blog/BlogAuthorCard.astro";
-import { authors, type Author } from "@data/authors.ts";
-import { categories, type Category } from "@data/category.ts";
-import { getFormattedDate } from "@utils/date.ts";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import HeadArticle from "@/components/HeadArticle.astro";
+import Label from "@/components/blog/BlogLabel.astro";
+import AuthorCard from "@/components/blog/BlogAuthorCard.astro";
+import { authors, type Author } from "@/data/authors.ts";
+import { categories, type Category } from "@/data/category.ts";
+import { getFormattedDate } from "@/utils/date.ts";
 
 export async function getStaticPaths() {
   const blog = await getCollection("blog");

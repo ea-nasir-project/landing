@@ -2,7 +2,7 @@
 title: "O que é Lixo Eletrônico?"
 description: "O que é lixo eletrônico, quais materiais ele contém, como é classificado no Brasil e por que o descarte correto faz diferença."
 pubDate: 2026-01-06
-heroImage: "@images/blog/o-que-e-lixo-eletronico.webp"
+heroImage: "@/images/blog/o-que-e-lixo-eletronico.webp"
 author: "pedro-lima"
 category: "reciclagem"
 tags: ["sustentabilidade", "reciclagem"]

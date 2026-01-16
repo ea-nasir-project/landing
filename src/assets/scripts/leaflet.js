@@ -1,6 +1,6 @@
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import pinUrl from '@images/logo/renova-pin.svg?url';
+import pinUrl from '@/images/logo/renova-pin.svg?url';
 
 export function initMap() {
   const el = document.querySelector('#map');

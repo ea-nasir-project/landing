@@ -1,5 +1,5 @@
 ---
-import heroImage from "@images/hero.webp";
+import heroImage from "@/images/hero.webp";
 ---
 
 <div class="relative isolate px-6 lg:px-8 min-h-screen">
@@ -18,32 +18,48 @@ import heroImage from "@images/hero.webp";
 
   <!-- Content -->
   <div
-    class="mx-auto max-w-2xl min-h-screen flex flex-col justify-center pt-28"
+    class="mx-auto max-w-3xl min-h-screen flex flex-col justify-center pt-28 pb-16"
   >
     <!-- h1 Desktop -->
     <h1
-      class="hidden sm:block text-7xl lg:text-8xl font-semibold tracking-tight text-balance text-white drop-shadow-lg font-barlow-condensed"
+      class="hidden sm:block text-7xl lg:text-8xl font-semibold tracking-tight text-balance text-white drop-shadow-lg font-barlow-condensed animate-fade-up"
     >
       Transforme<br />
-      seu <span class="text-emerald-400">lixo eletrônico</span><br />
-      em <span class="text-sky-400">impacto positivo</span>
+      seu <span
+        class="text-gradient gradient-teal font-semibold tracking-tight"
+        >lixo eletrônico</span
+      ><br />
+      em <span class="text-gradient gradient-sky font-semibold tracking-tight"
+        >impacto positivo</span
+      >
     </h1>
 
     <!-- h1 Mobile -->
     <h1
-      class="block sm:hidden text-6xl font-semibold tracking-tight text-balance text-white drop-shadow-lg font-barlow-condensed"
+      class="block sm:hidden text-6xl font-semibold tracking-tight text-balance text-white drop-shadow-lg font-barlow-condensed animate-fade-up"
     >
       Transforme<br />
       seu<br />
-      <span class="text-emerald-400">lixo eletrônico</span><br />
+      <span class="text-gradient gradient-teal font-semibold tracking-tight"
+        >lixo eletrônico</span
+      ><br />
       em<br />
-      <span class="text-sky-400">impacto positivo</span>
+      <span class="text-gradient gradient-sky font-semibold tracking-tight"
+        >impacto positivo</span
+      >
     </h1>
 
     <p
-      class="mt-8 text-lg font-medium text-pretty text-gray-100 sm:text-xl/8 drop-shadow-md"
+      class="mt-8 sm:text-xl/8 lg:text-2xl/9 font-medium text-pretty text-gray-100 drop-shadow-md animate-fade-up-delay"
     >
-      Coleta e compra de seus equipamentos usados com segurança e praticidade
+      Coleta e compra de equipamentos usados com segurança e praticidade
     </p>
+  </div>
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <div
+      class="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center pt-2"
+    >
+      <div class="w-1.5 h-3 bg-white/30 rounded-full"></div>
+    </div>
   </div>
 </div>
