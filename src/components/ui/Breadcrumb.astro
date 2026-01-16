@@ -1,28 +1,15 @@
 ---
-const pathname = Astro.url.pathname;
-const segments = pathname.split("/").filter((segment) => segment !== "");
+import type { BreadcrumbItem } from "@/utils/breadcrumbs";
 
-// Map specific slugs to readable names if needed, or use a general formatter
-const formatSegment = (segment: string) => {
-  return segment
-    .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
-};
+interface Props {
+  breadcrumbs: BreadcrumbItem[];
+}
 
-const breadcrumbs = segments.map((segment, index) => {
-  const href = "/" + segments.slice(0, index + 1).join("/");
-  return {
-    label: formatSegment(segment),
-    href,
-    isLast: index === segments.length - 1,
-  };
-});
+const { breadcrumbs } = Astro.props;
 ---
 
 <nav aria-label="Breadcrumb" class="container mx-auto px-4 md:px-8 py-4">
   <ol role="list" class="flex items-center space-x-2 text-sm text-gray-500">
-    <!-- Home Link -->
     <li>
       <a
         href="/"
@@ -67,7 +54,7 @@ const breadcrumbs = segments.map((segment, index) => {
           ) : (
             <a
               href={crumb.href}
-              class="ml-2 font-medium hover:text-emerald-600 transition-colors"
+              class="ml-2 font-medium hover:text-emerald-600"
             >
               {crumb.label}
             </a>

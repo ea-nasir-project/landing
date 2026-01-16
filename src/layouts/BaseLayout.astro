@@ -1,15 +1,19 @@
 ---
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
-import Breadcrumb from "@components/ui/Breadcrumb.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Breadcrumb from "@/components/ui/Breadcrumb.astro";
+
+import { resolveBreadcrumbs } from "@/utils/breadcrumbs.ts";
 
 interface Props {
   headerPosition?: "absolute" | "sticky";
 }
 
 const { headerPosition = "sticky" } = Astro.props;
-const pathname = Astro.url.pathname;
-const isHome = pathname === "/";
+
+const isHome = Astro.url.pathname === "/";
+
+const breadcrumbs = resolveBreadcrumbs(Astro.url.pathname);
 ---
 
 <!doctype html>
@@ -20,7 +24,7 @@ const isHome = pathname === "/";
   <body>
     <Header position={headerPosition} />
     <main class="pb-6 md:pb-8">
-      {!isHome && <Breadcrumb />}
+      {!isHome && <Breadcrumb breadcrumbs={breadcrumbs} />}
       <slot />
     </main>
     <Footer />
