@@ -1,6 +1,13 @@
 ---
 import ServiceLayout from "@/layouts/ServiceLayout.astro";
+import Card from "@/components/ui/Card.astro";
 import individualImg from "@/images/individual.webp";
+
+// Icons
+import LeafIcon from "@/icons/leaf-svgrepo-com.svg?raw";
+
+const RecycleIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="m14 16-3 3 3 3"/><path d="M8.293 13.596 7.196 9.5 3.1 10.598"/><path d="m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843"/><path d="m13.378 9.633 4.096 1.098 1.097-4.096"/></svg>`;
+const HandHeartIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 15 6 6"/><path d="M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.73 2.73 0 0 0 16 4a2.78 2.78 0 0 0-5 1.8c0 1.2.8 2 1.5 2.8L16 12Z"/></svg>`;
 
 const title = "Descarte voluntário nos pontos de coleta";
 const subtitle = "Faça o descarte consciente";
@@ -68,6 +75,29 @@ const faqs = [
       em situação de vulnerabilidade.
     </p>
   </div>
+
+  <section slot="cards" class="">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <Card
+        title="Destinação ambientalmente correta"
+        description="Os eletrônicos descartados são encaminhados para reciclagem por operadores licenciados, em conformidade com a legislação ambiental."
+        icon={RecycleIcon}
+        color="emerald"
+      />
+      <Card
+        title="Fortalecimento da reciclagem local"
+        description="O descarte voluntário apoia cooperativas, recicladores e trabalhadores que atuam diretamente na cadeia da reciclagem."
+        icon={HandHeartIcon}
+        color="emerald"
+      />
+      <Card
+        title="Impacto ambiental coletivo"
+        description="A reciclagem adequada reduz a contaminação do meio ambiente e reintegra materiais ao ciclo produtivo."
+        icon={LeafIcon}
+        color="emerald"
+      />
+    </div>
+  </section>
 
   <div slot="secondary-text" class="space-y-4">
     <p>

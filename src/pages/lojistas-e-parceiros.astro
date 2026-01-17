@@ -1,6 +1,13 @@
 ---
 import ServiceLayout from "@/layouts/ServiceLayout.astro";
+import Card from "@/components/ui/Card.astro";
 import shopkeeperImg from "@/images/shopkeeper.webp";
+
+// Icons
+const BoxIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>`;
+const DollarIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`;
+const UsersIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`;
+const ShieldCheckIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>`;
 
 const title = "Para lojistas e parceiros da rede";
 const subtitle = "Seja um parceiro e‑Renova";
@@ -68,6 +75,33 @@ const faqs = [
       imagem como parceiro e‑Renova impulsionando a visibilidade do seu negócio.
     </p>
   </div>
+
+  <div slot="cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <Card
+        title="Ponto de coleta sem complexidade"
+        description="Integração simples, sem impacto na operação do lojista."
+        icon={BoxIcon}
+        color="cyan"
+      />
+      <Card
+        title="Receita adicional recorrente"
+        description="Geração de renda com os materiais coletados."
+        icon={DollarIcon}
+        color="cyan"
+      />
+      <Card
+        title="Aumento de fluxo e visibilidade"
+        description="Mais pessoas no ponto físico e fortalecimento da imagem sustentável."
+        icon={UsersIcon}
+        color="cyan"
+      />
+      <Card
+        title="Conformidade ambiental garantida"
+        description="Destinação correta dos resíduos, reduzindo riscos legais."
+        icon={ShieldCheckIcon}
+        color="cyan"
+      />
+    </div>
 
   <div slot="secondary-text" class="space-y-4">
     <p>

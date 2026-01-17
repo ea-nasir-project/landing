@@ -3,7 +3,6 @@ import homeTopBg from "@/images/background/home-top.svg";
 import homeServicesBg from "@/images/background/home-services.svg";
 
 import Feature from "@/components/home/HomeOverviewFeature.astro";
-import Card from "@/components/home/HomeOverviewCard.astro";
 import CubeIcon from "@/icons/cube-outline-svgrepo-com.svg?raw";
 import DollarIcon from "@/icons/dollar-svgrepo-com.svg?raw";
 import LeafIcon from "@/icons/leaf-svgrepo-com.svg?raw";
@@ -36,29 +35,5 @@ import SecurityIcon from "@/icons/security-safe-svgrepo-com.svg?raw";
       />
     </div>
 
-    <div class="my-16 border-t border-emerald-100"></div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-4">
-      <Card
-        title="Gere renda e impacto positivo"
-        description="Receba pelos materiais descartados e apoie a preservação do meio ambiente"
-        icon={DollarIcon}
-      />
-      <Card
-        title="Logística sem complicações"
-        description="Processo simples e transparente, com acompanhamento do envio e entrega"
-        icon={CubeIcon}
-      />
-      <Card
-        title="Segurança da informação"
-        description="Todos os dispositivos passam por destruição de dados certificada, com certificado de conformidade"
-        icon={SecurityIcon}
-      />
-      <Card
-        title="Responsabilidade ambiental"
-        description="Garantimos que seu material seja processado de forma legal, responsável e transparente"
-        icon={LeafIcon}
-      />
-    </div>
   </div>
 </section>
