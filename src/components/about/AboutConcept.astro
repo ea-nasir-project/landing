@@ -1,14 +1,13 @@
 ---
-import { Image } from "astro:assets";
-import recyclingTeamImg from "@/images/recycling-team.webp";
+
 ---
 
-<section class="">
+<section class="section">
   <div class="container">
     <div class="max-w-4xl mx-auto">
-      <div class="space-y-8 pb-8">
+      <div class="space-y-8">
         <p
-          class="text-xl md:text-2xl font-light text-slate-800 leading-relaxed font-barlow-semi-condensed text-balance"
+          class="text-xl md:text-2xl font-semibold text-slate-700 leading-relaxed font-barlow-semi-condensed text-balance"
         >
           Da vontade de realizar algo verdadeiramente transformador e
           significativo, o conceito da <strong
@@ -35,8 +34,8 @@ import recyclingTeamImg from "@/images/recycling-team.webp";
             >
             <p class="text-slate-700 leading-relaxed">
               Falta infraestrutura acessível, informação clara e incentivo para
-              que consumidores e empresas de pequeno e médio porte enviem seus
-              resíduos para reciclagem.
+              que consumidores e empresas de pequeno e médio porte destinem seus
+              resíduos eletrônicos para reciclagem.
             </p>
           </li>
           <li class="flex items-start gap-4">
@@ -45,8 +44,8 @@ import recyclingTeamImg from "@/images/recycling-team.webp";
               >3</span
             >
             <p class="text-slate-700 leading-relaxed">
-              Empresas do setor carecem de visibilidade e canais mais amplos de
-              captação.
+              Empresas do setor carecem de visibilidade e canais de captação
+              mais amplos.
             </p>
           </li>
         </ul>
@@ -55,29 +54,17 @@ import recyclingTeamImg from "@/images/recycling-team.webp";
           <p
             class="text-lg md:text-xl text-slate-700 leading-relaxed text-balance font-barlow-semi-condensed"
           >
-            A <strong class="font-semibold text-emerald-600">e‑Renova</strong> atua para
-            suprir essas lacunas por meio de uma solução integrada: <span
+            A <strong>e‑Renova</strong> atua
+            para suprir essas lacunas por meio de uma solução integrada: <span
               class="font-medium text-slate-900">operação industrial</span
             >, <span class="font-medium text-slate-900"
-              >canal digital para vendas via logística reversa</span
-            > e <span class="font-medium text-slate-900"
+              >canal digital para logística reversa</span
+            > e um <span class="font-medium text-slate-900"
               >ecossistema completo de compliance ambiental</span
-            >, conectando de forma estruturada quem descarta, quem processa e
-            quem precisa cumprir suas obrigações ambientais.
+            >, conectando quem descarta, quem processa e quem precisa cumprir
+            suas obrigações ambientais.
           </p>
         </div>
-      </div>
-
-      <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-        <div
-          class="absolute inset-0 bg-linear-to-tr from-emerald-900/70 to-transparent z-1"
-        >
-        </div>
-        <Image
-          src={recyclingTeamImg}
-          alt="Equipe de reciclagem trabalhando"
-          class="w-full h-auto object-cover max-h-[600px]"
-        />
       </div>
     </div>
   </div>
