@@ -51,6 +51,7 @@ const faqs = [
   heroImageAlt="Empreendimento parceiro da e‑Renova"
   color="cyan"
   faqs={faqs}
+  showMap={true}
 >
   <div slot="hero-text" class="space-y-4">
     <p>
@@ -76,32 +77,35 @@ const faqs = [
     </p>
   </div>
 
-  <div slot="cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <Card
-        title="Ponto de coleta sem complexidade"
-        description="Integração simples, sem impacto na operação do lojista."
-        icon={BoxIcon}
-        color="cyan"
-      />
-      <Card
-        title="Receita adicional recorrente"
-        description="Geração de renda com os materiais coletados."
-        icon={DollarIcon}
-        color="cyan"
-      />
-      <Card
-        title="Aumento de fluxo e visibilidade"
-        description="Mais pessoas no ponto físico e fortalecimento da imagem sustentável."
-        icon={UsersIcon}
-        color="cyan"
-      />
-      <Card
-        title="Conformidade ambiental garantida"
-        description="Destinação correta dos resíduos, reduzindo riscos legais."
-        icon={ShieldCheckIcon}
-        color="cyan"
-      />
-    </div>
+  <div
+    slot="cards"
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+  >
+    <Card
+      title="Ponto de coleta sem complexidade"
+      description="Integração simples, sem impacto na operação do lojista."
+      icon={BoxIcon}
+      color="cyan"
+    />
+    <Card
+      title="Receita adicional recorrente"
+      description="Geração de renda com os materiais coletados."
+      icon={DollarIcon}
+      color="cyan"
+    />
+    <Card
+      title="Aumento de fluxo e visibilidade"
+      description="Mais pessoas no ponto físico e fortalecimento da imagem sustentável."
+      icon={UsersIcon}
+      color="cyan"
+    />
+    <Card
+      title="Conformidade ambiental garantida"
+      description="Destinação correta dos resíduos, reduzindo riscos legais."
+      icon={ShieldCheckIcon}
+      color="cyan"
+    />
+  </div>
 
   <div slot="secondary-text" class="space-y-4">
     <p>
