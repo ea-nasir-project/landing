@@ -2,6 +2,7 @@
 import ServiceLayout from "@/layouts/ServiceLayout.astro";
 import Card from "@/components/ui/Card.astro";
 import compostingImg from "@/images/composting1.webp";
+import Button from "@/components/ui/Button.astro";
 
 // Icons
 const TrashIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>`;
@@ -91,6 +92,12 @@ const faqs = [
       para adubar suas plantas, além de relatórios sobre o impacto positivo que
       você gerou ao não enviar lixo para o aterro.
     </p>
+    <Button
+      text="Instalar minha composteira"
+      href="https://wa.me/5511953562620?text=Olá!%20Gostaria%20de%20informações%20sobre%20o%20serviço%20de%20instalação%20de%20composteira%20residencial."
+      variant="amber"
+      size="xl"
+    />
   </div>
 
   <span slot="map-lead">

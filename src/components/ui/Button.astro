@@ -26,8 +26,9 @@ const {
 </a>
 
 <style>
+  @reference "../../styles/global.css";
   .btn {
-    @apply inline-flex items-center justify-center font-bold no-underline cursor-pointer border-0;
+    @apply flex items-center justify-center font-normal no-underline cursor-pointer border-0 w-fit mx-auto mt-12;
     /* font-family: $ff-headings (Assuming var(--font-barlow-condensed)) */
     font-family: var(--font-barlow-condensed);
 
@@ -56,8 +57,7 @@ const {
       inset 0 3px 2px -2px #ffffff80;
   }
 
-  .btn:hover,
-  .btn:focus {
+  .btn:focus-visible {
     outline-offset: 2px;
   }
 
@@ -94,32 +94,30 @@ const {
   }
 
   /* Variants */
-  /* Using Tailwind Theme colors via @apply or theme() if available, 
-     falling back to standard tailwind colors for mapping */
 
-  /* Green */
-  .btn--green {
-    @apply bg-green-400 text-green-900;
+  /* Teal */
+  .btn--teal {
+    @apply bg-teal-400 text-teal-950;
   }
-  .btn--green:hover,
-  .btn--green:focus {
-    @apply bg-green-300 outline-green-300;
+  .btn--teal:hover,
+  .btn--teal:focus {
+    @apply bg-teal-300 outline-teal-300;
     outline-width: 2px;
     outline-style: solid;
   }
 
-  /* Yellow */
-  .btn--yellow {
-    @apply bg-yellow-400 text-yellow-950; /* yellow-10 usually very dark */
+  /* Emerald */
+  .btn--emerald {
+    @apply bg-emerald-400 text-emerald-950;
   }
-  .btn--yellow:hover,
-  .btn--yellow:focus {
-    @apply bg-yellow-300 outline-yellow-300;
+  .btn--emerald:hover,
+  .btn--emerald:focus {
+    @apply bg-emerald-300 outline-emerald-300;
     outline-width: 2px;
     outline-style: solid;
   }
 
-  /* stone */
+  /* Stone */
   .btn--stone {
     @apply bg-stone-400 text-stone-900;
   }
@@ -130,27 +128,38 @@ const {
     outline-style: solid;
   }
 
-  /* Blue */
-  .btn--blue {
-    @apply bg-blue-400 text-blue-900;
+  /* Cyan */
+  .btn--cyan {
+    @apply bg-cyan-400 text-cyan-950;
   }
-  .btn--blue:hover,
-  .btn--blue:focus {
-    @apply bg-blue-300 outline-blue-300;
+  .btn--cyan:hover,
+  .btn--cyan:focus {
+    @apply bg-cyan-300 outline-cyan-300;
     outline-width: 2px;
     outline-style: solid;
   }
 
-  /* Login */
+  /* Amber */
+  .btn--amber {
+    @apply bg-amber-400 text-amber-950;
+  }
+  .btn--amber:hover,
+  .btn--amber:focus {
+    @apply bg-amber-300 outline-amber-300;
+    outline-width: 2px;
+    outline-style: solid;
+  }
+
+  /* Login (using Teal for consistency with Header) */
   .btn--login {
-    @apply bg-green-500 text-green-900 outline-green-500;
+    @apply bg-teal-500 text-teal-950 outline-teal-500;
     outline-width: 2px;
     outline-style: solid;
     outline-offset: 2px;
   }
   .btn--login:hover,
   .btn--login:focus {
-    @apply bg-green-400 text-green-900 outline-green-400;
+    @apply bg-teal-400 text-teal-950 outline-teal-400;
     outline-width: 2px;
     outline-style: solid;
   }

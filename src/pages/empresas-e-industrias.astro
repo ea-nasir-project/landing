@@ -2,6 +2,7 @@
 import ServiceLayout from "@/layouts/ServiceLayout.astro";
 import Card from "@/components/ui/Card.astro";
 import companiesImg from "@/images/companies.webp";
+import Button from "@/components/ui/Button.astro";
 
 // Icons
 const ScaleIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>`;
@@ -104,11 +105,16 @@ const faqs = [
       ambiental em um ativo reputacional.
     </p>
     <p>Entre em contato conosco para uma análise e agendamento.</p>
+    <Button
+      text="Atendimento para empresas"
+      href="https://wa.me/5511953562620?text=Olá!%20Gostaria%20de%20informações%20sobre%20coleta%20de%20grandes%20volumes%20de%20resíduos."
+      variant="stone"
+      size="xl"
+    />
   </div>
-  
+
   <span slot="map-lead">
     Atendemos empresas em toda a região metropolitana. Entre em contato para
     consultar a cobertura para coleta de grandes volumes em sua localidade.
   </span>
 </ServiceLayout>
-
