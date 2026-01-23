@@ -1,0 +1,130 @@
+---
+type WebsiteSchema = {
+  description?: string;
+  potentialAction?: any;
+};
+
+type ArticleSchema = {
+  headline: string;
+  image: string | string[];
+  author: {
+    "@type": "Person";
+    name: string;
+  };
+  datePublished: string;
+  dateModified?: string;
+};
+
+type OrganizationSchema = {
+  name?: string;
+  url?: string;
+  logo?: string;
+  contactPoint?: any;
+};
+
+type ServiceSchema = {
+  name: string;
+  description: string;
+  serviceType: string;
+};
+
+type LocalBusinessSchema = {
+  name?: string;
+  image?: string;
+  url?: string;
+  telephone?: string;
+  address?: any;
+  openingHoursSpecification?: any;
+};
+
+interface Props {
+  type: "website" | "organization" | "article" | "service" | "local-business";
+  data?:
+    | WebsiteSchema
+    | ArticleSchema
+    | OrganizationSchema
+    | ServiceSchema
+    | LocalBusinessSchema;
+}
+
+const { type, data = {} } = Astro.props;
+
+let schema = {};
+
+// Base URL for the site
+const siteUrl = Astro.site
+  ? Astro.site.toString()
+  : "https://www.e-renova.com.br/";
+
+if (type === "website") {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "e-Renova",
+    url: siteUrl,
+    ...data,
+  };
+} else if (type === "organization") {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "e-Renova",
+    url: siteUrl,
+    logo: new URL("favicon.svg", siteUrl).toString(),
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+55-11-95356-6220",
+      contactType: "customer service",
+      areaServed: "BR",
+      availableLanguage: "Portuguese",
+    },
+    ...data,
+  };
+} else if (type === "article") {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": new URL(Astro.url.pathname, siteUrl).toString(),
+    },
+    ...data,
+  };
+} else if (type === "local-business") {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "RecyclingCenter",
+    name: "e-Renova",
+    image: new URL("favicon.svg", siteUrl).toString(),
+    url: siteUrl,
+    telephone: "+55-11-95356-6220",
+    address: {
+      "@type": "PostalAddress",
+      addressRegion: "São Paulo",
+      addressCountry: "BR",
+    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "18:00",
+      },
+    ],
+    ...data,
+  };
+} else if (type === "service") {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    provider: {
+      "@type": "Organization",
+      name: "e-Renova",
+      url: siteUrl,
+    },
+    ...data,
+  };
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

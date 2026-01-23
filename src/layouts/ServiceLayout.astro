@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import HeadWebsite from "@/components/HeadWebSite.astro";
+import Schema from "@/components/seo/Schema.astro";
 import ServiceMapSection from "@/components/service/ServiceMapSection.astro";
 import FaqAccordion from "@/components/ui/FaqAccordion.astro";
 import { Image } from "astro:assets";
@@ -78,6 +79,16 @@ const outlineClass = `outline-4 outline-offset-4 ${theme.outline}`;
     title={`${title} | e‑Renova`}
     description={description}
   />
+  <Schema
+    slot="head"
+    type="service"
+    data={{
+      name: title,
+      description: description,
+      serviceType: "Recycling Service",
+    }}
+  />
+  <Schema slot="head" type="local-business" />
 
   <div class="container">
     <section

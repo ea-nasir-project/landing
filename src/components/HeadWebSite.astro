@@ -1,5 +1,6 @@
 ---
 import BaseHead from "./BaseHead.astro";
+import Schema from "./seo/Schema.astro";
 
 interface Props {
   title: string;
@@ -17,3 +18,5 @@ const { title, description, image } = Astro.props;
   ogType="website"
   showRSS={false}
 />
+<Schema type="organization" />
+<Schema type="website" />
