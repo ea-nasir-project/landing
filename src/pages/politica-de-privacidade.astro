@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import HeadLegal from "@/components/HeadLegal.astro";
+import Heading1 from "@/components/ui/Heading1.astro";
 ---
 
 <BaseLayout>
@@ -12,18 +13,13 @@ import HeadLegal from "@/components/HeadLegal.astro";
 
   <div class="container mx-auto px-4 max-w-3xl py-16 md:py-24 bg-white-100">
     <!-- Header -->
-    <div class="mb-8">
-      <h1 class="heading-1">Política de privacidade</h1>
-      <p class="text-slate-600 text-lg">
-        A e‑Renova valoriza a segurança e a privacidade dos dados de seus
-        clientes. Esta Política de Privacidade explica como coletamos, usamos,
-        armazenamos e protegemos as informações pessoais fornecidas em nosso
-        site.
-      </p>
-    </div>
+    <Heading1
+      title="Política de privacidade"
+      lead="A e‑Renova valoriza a segurança e a privacidade dos dados de seus clientes. Esta Política de Privacidade explica como coletamos, usamos, armazenamos e protegemos as informações pessoais fornecidas em nosso site."
+    />
 
     <!-- Content -->
-    <div class="max-w-none space-y-6 text-slate-600">
+    <div class="max-w-none space-y-6 text-slate-600 -mt-4">
       <p>
         Todas as informações pessoais recolhidas são utilizadas com o objetivo
         de tornar sua experiência em nosso site o mais produtiva, personalizada
@@ -160,7 +156,7 @@ import HeadLegal from "@/components/HeadLegal.astro";
         <p class="mt-4">
           Essas solicitações podem ser feitas pelo e-mail <a
             href="mailto:contato@atletadeouro.com.br"
-            class="text-emerald-600 hover:text-emerald-700 font-medium transition-colors"
+            class="text-teal-600 hover:text-teal-700 font-medium transition-colors"
             >contato@atletadeouro.com.br</a
           >.
         </p>
@@ -220,7 +216,7 @@ import HeadLegal from "@/components/HeadLegal.astro";
           <span class="inline-flex items-center gap-2 mt-2">
             📧 <a
               href="mailto:contato@e-renova.com.br"
-              class="text-emerald-600 hover:text-emerald-700 font-medium transition-colors"
+              class="text-teal-600 hover:text-teal-700 font-medium transition-colors"
               >contato@e-renova.com.br</a
             >
           </span>

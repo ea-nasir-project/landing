@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import HomeProductsCard from "@/components/home/HomeProductsCard.astro";
+import Heading2 from "@/components/ui/Heading2.astro";
+import Heading3 from "@/components/ui/Heading3.astro";
 
 // Images
 import boardsImg from "@/images/boards.webp";
@@ -11,7 +13,7 @@ import homeProductsBefore from "@/images/background/home-products-before.svg";
 import homeProductsAfter from "@/images/background/home-products-after.svg";
 ---
 
-<section class="section bg-emerald-50 z-0">
+<section class="section bg-teal-50 z-0">
   <!-- Decorative Top Background -->
   <!-- <div
     class="absolute top-[-78px] left-0 w-full h-[calc(100%+78px)] -z-10 pointer-events-none overflow-hidden"
@@ -31,16 +33,14 @@ import homeProductsAfter from "@/images/background/home-products-after.svg";
   </div> -->
 
   <div class="container mx-auto">
-    <div class="mb-16">
-      <h2 class="heading-2">Transforme resíduos em valor</h2>
-    </div>
+    <Heading2 title="Transforme resíduos em valor" />
 
     <!-- Electronics Section -->
     <div class="mb-16">
-      <h3 class="heading-3 text-emerald-800 mb-8">Resíduos eletrônicos</h3>
+      <Heading3 title="Resíduos eletrônicos" color="text-sky-900" />
 
       <div class="grid grid-cols-1 gap-6 justify-items-center">
-        <p class="text-lg text-gray-700 leading-relaxed max-w-5xl">
+        <p class="text-lg text-gray-700 leading-relaxed text-balance max-w-5xl">
           A e‑Renova oferece soluções ambientais completas, incluindo a
           reciclagem de resíduos eletrônicos com coleta e destinação adequada, a
           realização de campanhas de conscientização para escolas, empresas e
@@ -68,10 +68,10 @@ import homeProductsAfter from "@/images/background/home-products-after.svg";
 
     <!-- Composting Section -->
     <div>
-      <h3 class="heading-3 text-emerald-800 mb-8">Compostagem residencial</h3>
+      <Heading3 title="Compostagem residencial" color="text-sky-900" />
 
       <div class="grid grid-cols-1 gap-6 justify-items-center">
-        <p class="text-lg text-gray-700 leading-relaxed max-w-5xl">
+        <p class="text-lg text-gray-700 leading-relaxed text-balance max-w-5xl">
           Confira também nosso trabalho de compostagem residencial para quem
           deseja adotar práticas sustentáveis no dia a dia, reduzindo o lixo
           enviado a aterros e contribuindo para um ciclo mais sustentável.

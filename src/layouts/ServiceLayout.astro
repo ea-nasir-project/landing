@@ -4,6 +4,8 @@ import HeadWebsite from "@/components/HeadWebSite.astro";
 import ServiceMapSection from "@/components/service/ServiceMapSection.astro";
 import FaqAccordion from "@/components/ui/FaqAccordion.astro";
 import { Image } from "astro:assets";
+import Heading1 from "@/components/ui/Heading1.astro";
+import Heading2 from "@/components/ui/Heading2.astro";
 
 interface Props {
   title: string;
@@ -11,7 +13,7 @@ interface Props {
   description: string;
   heroImage: ImageMetadata;
   heroImageAlt: string;
-  color: "emerald" | "purple" | "cyan" | "amber";
+  color: "emerald" | "stone" | "cyan" | "amber";
   faqs?: { question: string; answer: string }[];
   showMap?: boolean;
 }
@@ -37,14 +39,14 @@ const colorMapVariants = {
     mapBorder: "border-emerald-100",
     mapIndicator: "border-emerald-200",
   },
-  purple: {
-    outline: "outline-purple-500",
-    h1: "text-purple-950",
-    h2: "text-purple-900",
-    mapBg: "bg-purple-100",
-    mapTitle: "text-purple-800",
-    mapBorder: "border-purple-100",
-    mapIndicator: "border-purple-200",
+  stone: {
+    outline: "outline-stone-500",
+    h1: "text-stone-950",
+    h2: "text-stone-900",
+    mapBg: "bg-stone-100",
+    mapTitle: "text-stone-800",
+    mapBorder: "border-stone-100",
+    mapIndicator: "border-stone-200",
   },
   cyan: {
     outline: "outline-cyan-500",
@@ -82,7 +84,7 @@ const outlineClass = `outline-4 outline-offset-4 ${theme.outline}`;
       class="section-intro grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
     >
       <div class="space-y-6">
-        <h1 class={`heading-1 ${theme.h1}`}>{title}</h1>
+        <Heading1 title={title} class={theme.h1} />
         <div class="text-lg text-gray-700 leading-relaxed text-left space-y-4">
           <slot name="hero-text" />
         </div>
@@ -107,7 +109,7 @@ const outlineClass = `outline-4 outline-offset-4 ${theme.outline}`;
     </section>
 
     <section class="section max-w-4xl mx-auto text-center space-y-8">
-      <h2 class={`heading-2 mx-auto ${theme.h2}`}>{subtitle}</h2>
+      <Heading2 title={subtitle} color={theme.h2} />
       <div class="text-lg text-gray-700 leading-relaxed text-left space-y-4">
         <slot name="secondary-text" />
       </div>
@@ -126,9 +128,11 @@ const outlineClass = `outline-4 outline-offset-4 ${theme.outline}`;
     {
       faqs && faqs.length > 0 && (
         <section class="section max-w-3xl mx-auto space-y-12">
-          <h2 class={`heading-2 text-center ${theme.h2}`}>
-            Suas Dúvidas Respondidas
-          </h2>
+          <Heading2
+            title="Suas Dúvidas Respondidas"
+            color={theme.h2}
+            class="text-center"
+          />
           <FaqAccordion items={faqs} color={color} />
         </section>
       )

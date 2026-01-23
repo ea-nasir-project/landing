@@ -20,24 +20,20 @@ const safeCategory = category || categories[0];
 
 const categoryColors = {
   green: {
-    text: "text-emerald-900",
-    underline:
-      "bg-linear-to-r from-emerald-200 to-emerald-100",
+    text: "text-green-900",
+    underline: "bg-linear-to-r from-green-200 to-green-100",
   },
   blue: {
     text: "text-blue-900",
-    underline:
-      "bg-linear-to-r from-blue-200 to-blue-100",
+    underline: "bg-linear-to-r from-blue-200 to-blue-100",
   },
   yellow: {
     text: "text-yellow-900",
-    underline:
-      "bg-linear-to-r from-yellow-200 to-yellow-100",
+    underline: "bg-linear-to-r from-yellow-200 to-yellow-100",
   },
-  purple: {
-    text: "text-purple-900",
-    underline:
-      "bg-linear-to-r from-purple-200 to-purple-100",
+  stone: {
+    text: "text-stone-900",
+    underline: "bg-linear-to-r from-stone-200 to-stone-100",
   },
 };
 
@@ -106,9 +102,7 @@ const activeCategoryColor =
     }
   </div>
 
-  <div
-    class="flex items-center mt-3 space-x-3 text-gray-500"
-  >
+  <div class="flex items-center mt-3 space-x-3 text-gray-500">
     <div class="flex items-center gap-3">
       <div class="relative shrink-0 w-5 h-5">
         {

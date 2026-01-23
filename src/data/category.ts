@@ -1,7 +1,7 @@
 export interface Category {
   title: string;
   slug: string;
-  color: "green" | "blue" | "yellow" | "purple";
+  color: "green" | "blue" | "yellow" | "stone";
   description: string;
 }
 
@@ -27,7 +27,7 @@ export const categories: Category[] = [
   {
     title: "Energia Renovável",
     slug: "energia-renovavel",
-    color: "purple",
+    color: "stone",
     description: "Tudo sobre energia renovável.",
   },
 ];

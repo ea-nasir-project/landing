@@ -11,27 +11,27 @@ const isHome = pathname === "/";
 
 const headerClass = isHome
   ? `${position} inset-x-0 top-0 z-50`
-  : `${position} inset-x-0 top-0 z-50 bg-emerald-950/90 backdrop-blur-md shadow-md transition-all duration-300`;
+  : `${position} inset-x-0 top-0 z-50 bg-teal-950/90 backdrop-blur-md shadow-md transition-all duration-300`;
 
 const linkClass = isHome
-  ? "text-base/6 font-semibold text-emerald-100 hover:text-white transition-colors"
-  : "text-base/6 font-semibold text-emerald-50 hover:text-white transition-colors";
+  ? "text-base/6 font-semibold text-teal-100 hover:text-white transition-colors"
+  : "text-base/6 font-semibold text-teal-50 hover:text-white transition-colors";
 
 const buttonClass = isHome
-  ? "inline-flex items-center gap-x-1 text-base/6 font-semibold text-emerald-100 hover:text-white transition-colors"
-  : "inline-flex items-center gap-x-1 text-base/6 font-semibold text-emerald-50 hover:text-white transition-colors";
+  ? "inline-flex items-center gap-x-1 text-base/6 font-semibold text-teal-100 hover:text-white transition-colors"
+  : "inline-flex items-center gap-x-1 text-base/6 font-semibold text-teal-50 hover:text-white transition-colors";
 ---
 
 <header class={headerClass}>
   <div class="max-w-5xl mx-auto">
     <nav
       aria-label="Global"
-      class="flex items-center justify-between px-6 py-4 lg:px-8 lg:py-4"
+      class="flex items-center justify-between p-6 lg:px-8"
     >
       <div class="flex lg:flex-1">
         <a href="/" class="-m-1.5 p-1.5">
           <span class="sr-only">e-Renova</span>
-          <img src={Logo.src} alt="e-Renova logo" class="h-14 w-auto" />
+          <img src={Logo.src} alt="e-Renova logo" class="h-16 w-auto" />
         </a>
       </div>
       <div class="flex lg:hidden">
@@ -39,7 +39,7 @@ const buttonClass = isHome
           type="button"
           command="show-modal"
           commandfor="mobile-menu"
-          class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-emerald-200"
+          class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-teal-200"
         >
           <span class="sr-only">Abrir menu principal</span>
           <svg
@@ -82,70 +82,70 @@ const buttonClass = isHome
             class="absolute -left-26 top-full z-10 mt-3 w-max opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
           >
             <div
-              class="w-full overflow-hidden rounded-3xl bg-emerald-50 shadow-lg ring-1 ring-emerald-900/10"
+              class="w-full overflow-hidden rounded-3xl bg-teal-50 shadow-lg ring-1 ring-teal-900/10"
             >
               <div class="p-4">
                 <div
-                  class="group/item relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-emerald-100 transition-colors"
+                  class="group/item relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-teal-100 transition-colors"
                 >
                   <div class="flex-auto">
                     <a
                       href="/descarte-voluntario"
-                      class="block font-semibold text-emerald-900"
+                      class="block font-semibold text-teal-900"
                     >
                       Descarte Voluntário
                       <span class="absolute inset-0"></span>
                     </a>
-                    <p class="mt-1 text-emerald-700">
+                    <p class="mt-1 text-teal-700">
                       Pontos de coleta para descarte
                     </p>
                   </div>
                 </div>
 
                 <div
-                  class="group/item relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-emerald-100 transition-colors"
+                  class="group/item relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-teal-100 transition-colors"
                 >
                   <div class="flex-auto">
                     <a
                       href="/lojistas-e-parceiros"
-                      class="block font-semibold text-emerald-900"
+                      class="block font-semibold text-teal-900"
                     >
                       Lojistas e Parceiros
                       <span class="absolute inset-0"></span>
                     </a>
-                    <p class="mt-1 text-emerald-700">
+                    <p class="mt-1 text-teal-700">
                       Parcerias para coleta em estabelecimentos
                     </p>
                   </div>
                 </div>
                 <div
-                  class="group/item relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-emerald-100 transition-colors"
+                  class="group/item relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-teal-100 transition-colors"
                 >
                   <div class="flex-auto">
                     <a
                       href="/empresas-e-industrias"
-                      class="block font-semibold text-emerald-900"
+                      class="block font-semibold text-teal-900"
                     >
                       Empresas e Indústrias
                       <span class="absolute inset-0"></span>
                     </a>
-                    <p class="mt-1 text-emerald-700">
+                    <p class="mt-1 text-teal-700">
                       Logística reversa para grandes volumes
                     </p>
                   </div>
                 </div>
                 <div
-                  class="group/item relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-emerald-100 transition-colors"
+                  class="group/item relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-teal-100 transition-colors"
                 >
                   <div class="flex-auto">
                     <a
                       href="/compostagem-residencial"
-                      class="block font-semibold text-emerald-900"
+                      class="block font-semibold text-teal-900"
                     >
                       Compostagem Residencial
                       <span class="absolute inset-0"></span>
                     </a>
-                    <p class="mt-1 text-emerald-700">
+                    <p class="mt-1 text-teal-700">
                       Soluções para compostagem em casa
                     </p>
                   </div>
@@ -182,7 +182,7 @@ const buttonClass = isHome
                 type="button"
                 command="close"
                 commandfor="mobile-menu"
-                class="-m-2.5 rounded-md p-2.5 text-emerald-800"
+                class="-m-2.5 rounded-md p-2.5 text-teal-800"
               >
                 <span class="sr-only">Fechar menu</span>
                 <svg
@@ -206,36 +206,36 @@ const buttonClass = isHome
                 <div class="space-y-2 py-6">
                   <a
                     href="/sobre"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-emerald-900 hover:bg-emerald-100"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-teal-900 hover:bg-teal-100"
                     >Sobre</a
                   >
 
                   <!-- Serviços com submenu -->
                   <div class="-mx-3">
                     <div
-                      class="block px-3 py-2 text-base/7 font-semibold text-emerald-900"
+                      class="block px-3 py-2 text-base/7 font-semibold text-teal-900"
                     >
                       Serviços
                     </div>
                     <div class="pl-6 space-y-2">
                       <a
                         href="/descarte-voluntario"
-                        class="block rounded-lg px-3 py-2 text-sm/6 text-emerald-700 hover:bg-emerald-100"
+                        class="block rounded-lg px-3 py-2 text-sm/6 text-teal-700 hover:bg-teal-100"
                         >Descarte Voluntário</a
                       >
                       <a
                         href="/lojistas-e-parceiros"
-                        class="block rounded-lg px-3 py-2 text-sm/6 text-emerald-700 hover:bg-emerald-100"
+                        class="block rounded-lg px-3 py-2 text-sm/6 text-teal-700 hover:bg-teal-100"
                         >Lojistas e Parceiros</a
                       >
                       <a
                         href="/empresas-e-industrias"
-                        class="block rounded-lg px-3 py-2 text-sm/6 text-emerald-700 hover:bg-emerald-100"
+                        class="block rounded-lg px-3 py-2 text-sm/6 text-teal-700 hover:bg-teal-100"
                         >Empresas e Indústrias</a
                       >
                       <a
                         href="/compostagem-residencial"
-                        class="block rounded-lg px-3 py-2 text-sm/6 text-emerald-700 hover:bg-emerald-100"
+                        class="block rounded-lg px-3 py-2 text-sm/6 text-teal-700 hover:bg-teal-100"
                         >Compostagem Residencial</a
                       >
                     </div>
@@ -243,14 +243,14 @@ const buttonClass = isHome
 
                   <a
                     href="/blog"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-emerald-900 hover:bg-emerald-100"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-teal-900 hover:bg-teal-100"
                     >Blog</a
                   >
                 </div>
                 <div class="py-6">
                   <a
                     href="https://wa.me/5511953562620?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20e-Renova."
-                    class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-emerald-900 hover:bg-emerald-100"
+                    class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-teal-900 hover:bg-teal-100"
                     >Contato</a
                   >
                 </div>

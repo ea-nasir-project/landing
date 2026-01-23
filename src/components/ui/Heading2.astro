@@ -1,0 +1,22 @@
+---
+interface Props {
+  title: string;
+  lead?: string;
+  class?: string;
+  color?: string;
+}
+
+const { title, lead, class: className, color = "text-sky-950" } = Astro.props;
+---
+
+<div class="space-y-2 mb-10">
+  <h2
+    class:list={[
+      "text-4xl md:text-5xl font-bold leading-tight max-w-4xl font-barlow-semi-condensed text-balance",
+      color,
+      className,
+    ]}
+    set:html={title}
+  />
+  {lead && <p class="text-lg text-gray-700 leading-relaxed">{lead}</p>}
+</div>

@@ -1,5 +1,6 @@
 ---
 import Map from "@/components/LeafletMap.astro";
+import Heading3 from "@/components/ui/Heading3.astro";
 
 interface Props {
   theme: {
@@ -21,9 +22,7 @@ const { theme } = Astro.props;
       <Map />
     </div>
     <div class="space-y-6">
-      <h3 class={`heading-3 ${theme.mapTitle}`}>
-        Encontre os parceiros e‑Renova
-      </h3>
+      <Heading3 title="Encontre os parceiros e‑Renova" color={theme.mapTitle} />
       <p class="text-gray-700 leading-relaxed">
         <slot name="map-lead">
           Visualize no mapa os pontos de interesse, parceiros e locais de coleta

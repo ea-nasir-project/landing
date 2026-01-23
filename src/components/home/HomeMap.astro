@@ -1,21 +1,24 @@
 ---
 import Map from "@/components/LeafletMap.astro";
+import Heading2 from "@/components/ui/Heading2.astro";
 ---
 
 <section class="section">
-  <div class="container">
-    <div class="mb-16 space-y-4">
-      <h2 class="heading-2 mb-8">Parceiros da iniciativa e‑Renova</h2>
-      <p class="text-slate-600 leading-relaxed text-lg text-balance group">
-        A rede de parceiros da e-Renova conecta empresas, instituições e pontos
-        de coleta que atuam de forma integrada para garantir destinação correta,
-        rastreabilidade e impacto ambiental positivo.
-      </p>
-      <p class="text-slate-600 leading-relaxed text-lg text-balance font-medium">
-        Consulte no mapa nossos parceiros e descubra onde descartar seus
-        eletrônicos de forma correta:
-      </p>
-    </div>
-    <Map />
+  <div class="container space-y-4 mb-8">
+    <Heading2 title="Parceiros da iniciativa e‑Renova" />
+    <p
+      class="text-xl text-gray-700 leading-relaxed text-balance max-w-4xl mx-auto"
+    >
+      A rede de parceiros da e-Renova conecta empresas, instituições e pontos de
+      coleta que atuam de forma integrada para garantir destinação correta,
+      rastreabilidade e impacto ambiental positivo.
+    </p>
+    <p
+      class="text-xl text-gray-700 leading-relaxed text-balance max-w-4xl mx-auto font-medium"
+    >
+      Consulte no mapa nossos parceiros e descubra onde descartar seus
+      eletrônicos de forma correta:
+    </p>
   </div>
+  <Map />
 </section>

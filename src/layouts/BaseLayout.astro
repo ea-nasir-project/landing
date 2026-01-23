@@ -7,7 +7,7 @@ import { resolveBreadcrumbs } from "@/utils/breadcrumbs.ts";
 
 interface Props {
   headerPosition?: "absolute" | "sticky";
-  color?: "emerald" | "purple" | "cyan" | "amber";
+  color?: "emerald" | "stone" | "cyan" | "amber";
 }
 
 const { headerPosition = "sticky", color = "emerald" } = Astro.props;
@@ -18,7 +18,7 @@ const breadcrumbs = resolveBreadcrumbs(Astro.url.pathname);
 
 const bgMap = {
   emerald: "bg-emerald-50",
-  purple: "bg-purple-50",
+  stone: "bg-stone-50",
   cyan: "bg-cyan-50",
   amber: "bg-amber-50",
 };

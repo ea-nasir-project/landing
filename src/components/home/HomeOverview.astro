@@ -3,21 +3,20 @@ import homeTopBg from "@/images/background/home-top.svg";
 import homeServicesBg from "@/images/background/home-services.svg";
 
 import Feature from "@/components/home/HomeOverviewFeature.astro";
+import Heading2 from "@/components/ui/Heading2.astro";
 import CubeIcon from "@/icons/cube-outline-svgrepo-com.svg?raw";
 import DollarIcon from "@/icons/dollar-svgrepo-com.svg?raw";
 import LeafIcon from "@/icons/leaf-svgrepo-com.svg?raw";
 import SecurityIcon from "@/icons/security-safe-svgrepo-com.svg?raw";
 ---
 
-<section class="section-intro bg-linear-to-b from-emerald-50 to-white">
+<section class="section-intro bg-linear-to-b from-teal-50 to-white">
   <div class="container mx-auto">
-    <div class="mb-20">
-      <h2 class="heading-2">
-        Muito além do descarte,<br /> construindo um futuro sustentável
-      </h2>
-    </div>
+    <Heading2
+      title="Muito além do descarte, <br> construindo um futuro sustentável"
+    />
 
-    <div class="space-y-16">
+    <div class="space-y-8">
       <Feature
         title="Reciclagem de resíduos eletrônicos"
         subtitle="Soluções em economia circular"
@@ -34,6 +33,5 @@ import SecurityIcon from "@/icons/security-safe-svgrepo-com.svg?raw";
         description="Soluções de compostagem domiciliar que facilitam a adoção de práticas sustentáveis em casa, reduzindo resíduos orgânicos e ampliando o impacto ambiental positivo de forma simples e acessível."
       />
     </div>
-
   </div>
 </section>

@@ -4,7 +4,7 @@ interface Props {
     question: string;
     answer: string;
   }[];
-  color?: "emerald" | "purple" | "cyan" | "amber";
+  color?: "emerald" | "stone" | "cyan" | "amber";
 }
 
 const { items, color = "emerald" } = Astro.props;
@@ -15,10 +15,10 @@ const colorMap = {
     summary: "text-emerald-900 group-hover:text-emerald-700",
     icon: "bg-emerald-50 text-emerald-600 group-open:bg-emerald-100",
   },
-  purple: {
-    details: "border-purple-100 hover:border-purple-200",
-    summary: "text-purple-900 group-hover:text-purple-700",
-    icon: "bg-purple-50 text-purple-600 group-open:bg-purple-100",
+  stone: {
+    details: "border-stone-100 hover:border-stone-200",
+    summary: "text-stone-900 group-hover:text-stone-700",
+    icon: "bg-stone-50 text-stone-600 group-open:bg-stone-100",
   },
   cyan: {
     details: "border-cyan-100 hover:border-cyan-200",

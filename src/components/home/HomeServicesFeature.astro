@@ -1,6 +1,7 @@
 ---
 import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
+import Heading3 from "@/components/ui/Heading3.astro";
 
 interface Props {
   title: string;
@@ -8,7 +9,7 @@ interface Props {
   image: ImageMetadata;
   href: string;
   reversed?: boolean;
-  color: "emerald" | "purple" | "cyan" | "amber";
+  color: "emerald" | "stone" | "cyan" | "amber";
 }
 
 const {
@@ -26,10 +27,10 @@ const colorMapVariants = {
     title: "text-emerald-900 hover:text-emerald-700 transition-colors",
     text: "text-emerald-600 hover:text-emerald-700 transition-colors",
   },
-  purple: {
-    outline: "outline-purple-500",
-    title: "text-purple-900 hover:text-purple-700 transition-colors",
-    text: "text-purple-600 hover:text-purple-700 transition-colors",
+  stone: {
+    outline: "outline-stone-500",
+    title: "text-stone-900 hover:text-stone-700 transition-colors",
+    text: "text-stone-600 hover:text-stone-700 transition-colors",
   },
   cyan: {
     outline: "outline-cyan-500",
@@ -53,10 +54,9 @@ const titleClass = `heading-3 ${colorMapVariants[color].title}`;
 >
   <!-- Text Content -->
   <div class="flex-1 space-y-6">
-    <h3 class={titleClass}>
-      {title}
-    </h3>
-    <p class="text-lg text-gray-700 leading-relaxed">
+    <Heading3 title={title} color={color} class={titleClass} />
+
+    <p class="text-lg text-gray-700 leading-relaxed text-balance">
       {description}
     </p>
     <div>

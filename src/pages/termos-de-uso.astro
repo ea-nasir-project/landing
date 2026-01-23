@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import HeadLegal from "@/components/HeadLegal.astro";
+import Heading1 from "@/components/ui/Heading1.astro";
 
 const lastUpdate = "02/01/2026";
 ---
@@ -15,7 +16,7 @@ const lastUpdate = "02/01/2026";
   <div class="container mx-auto px-4 max-w-3xl py-16 md:py-24">
     <!-- Header -->
     <div class="mb-12">
-      <h1 class="heading-1">Termos de uso</h1>
+      <Heading1 title="Termos de Uso" />
       <p class="text-slate-500 mb-6">
         Última atualização: <strong>{lastUpdate}</strong>
       </p>
@@ -297,7 +298,7 @@ const lastUpdate = "02/01/2026";
           O tratamento de dados pessoais segue nossa <strong
             ><a
               href="/politica-de-privacidade"
-              class="text-emerald-600 hover:text-emerald-700 font-medium transition-colors"
+              class="text-teal-600 hover:text-teal-700 font-medium transition-colors"
               >Política de Privacidade</a
             ></strong
           >, disponível no site.
@@ -346,7 +347,7 @@ const lastUpdate = "02/01/2026";
           <span class="inline-flex items-center gap-2 mt-2">
             📧 <a
               href="mailto:contato@e-renova.com.br"
-              class="text-emerald-600 hover:text-emerald-700 font-medium transition-colors"
+              class="text-teal-600 hover:text-teal-700 font-medium transition-colors"
               >contato@e-renova.com.br</a
             >
           </span>

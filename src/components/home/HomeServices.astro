@@ -1,5 +1,6 @@
 ---
 import HomeServicesFeature from "@/components/home/HomeServicesFeature.astro";
+import Heading2 from "@/components/ui/Heading2.astro";
 
 // Images
 import individualImg from "@/images/individual.webp";
@@ -10,13 +11,11 @@ import compostingImg from "@/images/composting1.webp";
 
 <section class="section bg-white overflow-hidden">
   <div class="container mx-auto">
-    <div class="mb-16">
-      <h2 class="heading-2">
-        Processo simples, seguro e confiável para o descarte de eletrônicos
-      </h2>
-    </div>
+    <Heading2
+      title="Processo simples, seguro e confiável para o descarte de eletrônicos"
+    />
 
-    <div class="space-y-20">
+    <div class="space-y-16">
       <!-- 1. Descarte voluntário (Odd: Text Left, Image Right) -->
       <HomeServicesFeature
         title="Descarte voluntário nos pontos de coleta"
@@ -42,7 +41,7 @@ import compostingImg from "@/images/composting1.webp";
         description="Para empresas, indústrias e organizações que precisam de logística reversa estruturada e coleta em volume. Oferecemos certificação de destruição de dados e relatórios de impacto ambiental completos."
         image={companiesImg}
         href="/empresas-e-industrias"
-        color="purple"
+        color="stone"
       />
 
       <!-- 4. Instalação de composteiras residenciais (Even: Image Left, Text Right) -->
