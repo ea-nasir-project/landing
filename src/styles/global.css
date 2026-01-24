@@ -10,7 +10,7 @@
 @layer base {
   body {
     font-family: var(--font-barlow);
-    @apply text-slate-800 bg-white;
+    @apply text-slate-800 bg-teal-50;
   }
 
   h1,

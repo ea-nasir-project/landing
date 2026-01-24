@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import bgServices from "@/images/background/services.svg";
 import HomeServicesFeature from "@/components/home/HomeServicesFeature.astro";
 import Heading2 from "@/components/ui/Heading2.astro";
 
@@ -9,8 +11,14 @@ import companiesImg from "@/images/companies.webp";
 import compostingImg from "@/images/composting1.webp";
 ---
 
-<section class="section bg-white overflow-hidden">
-  <div class="container mx-auto">
+<section class="section relative overflow-hidden">
+  <Image
+    src={bgServices}
+    class="block absolute inset-0 w-full h-full object-cover z-0"
+    alt=""
+    aria-hidden="true"
+  />
+  <div class="container mx-auto relative z-10">
     <Heading2
       title="Processo simples, seguro e confiável para o descarte de eletrônicos"
     />

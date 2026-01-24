@@ -1,6 +1,7 @@
 ---
-import homeTopBg from "@/images/background/home-top.svg";
-import homeServicesBg from "@/images/background/home-services.svg";
+import { Image } from "astro:assets";
+import bgOverview from "@/images/background/overview.svg";
+import bgOverviewMobile from "@/images/background/overview-mobile.svg";
 
 import Feature from "@/components/home/HomeOverviewFeature.astro";
 import Heading2 from "@/components/ui/Heading2.astro";
@@ -10,8 +11,22 @@ import LeafIcon from "@/icons/leaf-svgrepo-com.svg?raw";
 import SecurityIcon from "@/icons/security-safe-svgrepo-com.svg?raw";
 ---
 
-<section class="section-intro bg-linear-to-b from-teal-50 to-white">
-  <div class="container mx-auto">
+<section class="section-intro relative overflow-hidden">
+  <Image
+    src={bgOverview}
+    class="hidden md:block absolute inset-0 w-full object-cover pointer-events-none z-0"
+    alt=""
+    aria-hidden="true"
+  />
+
+  <Image
+    src={bgOverviewMobile}
+    class="block md:hidden absolute inset-0 w-full object-contain pointer-events-none z-0"
+    alt=""
+    aria-hidden="true"
+  />
+
+  <div class="container mx-auto relative z-10">
     <Heading2
       title="Muito além do descarte, <br> construindo um futuro sustentável"
     />
