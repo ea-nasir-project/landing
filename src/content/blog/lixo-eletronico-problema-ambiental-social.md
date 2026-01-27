@@ -1,8 +1,8 @@
 ---
-title: "Lixo Eletrônico: A Bomba-Relógio Que Você Pode Ajudar a Desarmar"
-description: "Entenda por que o lixo eletrônico é uma bomba-relógio ambiental, o que está em jogo e como pequenas atitudes podem transformar um problema global em oportunidade."
+title: "Por que o lixo eletrônico é um problema ambiental e social"
+description: "Entenda por que o lixo eletrônico é problema ambiental e social, o que está em jogo e como pequenas atitudes podem transformar um problema global em oportunidade."
 pubDate: 2026-01-07
-heroImage: "@/images/blog/lixo-eletronico-bomba-relogio-ambiental.webp"
+heroImage: "@/images/blog/lixo-eletronico-problema-ambiental-social.webp"
 author: "alexandre-uglar"
 category: "sustentabilidade"
 tags: ["sustentabilidade", "reciclagem", "gestão de resíduos"]
